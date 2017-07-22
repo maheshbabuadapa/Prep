@@ -1,4 +1,4 @@
-Bootstrapping:Commands given while fireing the instance  
+Bootstrapping:Commands given while fireing the ec2 instae  
 Viewing User-Data & Instance Meta-Data
 .curl http://ec2-ipaddress/latest/user-data
 .curl http://ec2-ipaddress/latest/meta-data
