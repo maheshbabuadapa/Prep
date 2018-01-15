@@ -1,0 +1,943 @@
+    1  yum update
+    2  clear
+    3  yum install git
+    4  clear
+    5  exit
+    6  git --version
+    7  history
+    8  mkdir test
+    9  cd test/
+   10  git init
+   11  ls -ltrah
+   12  ls -lt
+   13  openssh
+   14  ssh-keygen -t rsa 
+   15  cd /root/
+   16  ls -ltrah
+   17  cd .ssh/
+   18  ls -ltr
+   19  clip id_rsa.pub 
+   20  cat id_rsa.pub 
+   21  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbtkPnVVV6+yDxH4VJxMB2H5gOH+5/MSFM9lJ+3dnK                                  kJEpp94JuPMHWQtkOfk1ifo59uBQv/zw81kxSS3fltcD7uhqlx6U3j+BZGwI21AsE9uQvrA2aL4krI19                                  OgWHe7x69jz1/ncmialzOBMU73QatABKGUCDSqg8PE1pkdtsFUdlA9sPUaEeEAG85zVRFDVeAhEPuihL                                  U0LMpcfDJZuimfZllfNYcytAC4HgdwOjcoLHg3kd5A1cRO8aCXXUHMPJrItcfVzhVYizygb9EoBCJvMO                                  y+CsMUh5N/qhPIu0ORvtf3ZBCbKEjcEVJ3eO9O8wrZdF5uFRg1wELC1H/oQb root@ip-172-31-30-2                                  13.ec2.internal
+   22  vi id_rsa.pub 
+   23  cd ..
+   24  cd test/
+   25  git clone git@github.com:maheshbabuadapa/AWS-Prep.git
+   26  ls -ltr
+   27  cd AWS-Prep/
+   28  ls -ltr
+   29  cat AWS-Commands 
+   30  cd /
+   31  curl http://ec2-ipaddress/latest/user-data
+   32  curl http://169.254.169.254/latest/meta-data/
+   33  curl http://169.254.169.254/latest/user-data/
+   34  clear
+   35  ls -ltr
+   36  cd ~
+   37  cd test/
+   38  ls ltr
+   39  ls -ltr
+   40  cd AWS-Prep/
+   41  ls -ltr
+   42  vi AWS-Commands 
+   43  git config --global color.ui true
+   44  ls -ltr
+   45  git config --global color.status auto
+   46  git config --global color.branch auto
+   47  clear
+   48  cd ..
+   49  ls -ltr
+   50  ls -ltrah
+   51  cd .git/
+   52  ls -ltr
+   53  cat config 
+   54  git config --system.name "Git repo"
+   55  git config --system "Git repo"
+   56  git config --list
+   57  history
+   58  clear
+   59  yum install yum
+   60  yum install vim
+   61  clear
+   62  git config --global core.editor vim
+   63  cat config 
+   64  ls -ltrah
+   65  cd ..
+   66  ls -ltr
+   67  ls -ltrah
+   68  cd .git/
+   69  ls -ltr
+   70  cat config 
+   71  git config --list
+   72  git config --global core.pager 'more'
+   73  git config --global list
+   74  git config --list
+   75  clear
+   76  cd ..
+   77  ls -ltr
+   78  cd ..
+   79  mkdir gittest
+   80  cd gittest/
+   81  git inti
+   82  git init
+   83  ls -ltr
+   84  ls -ltrah
+   85  git status
+   86  echo "this is my first file" > test.tx
+   87  git status
+   88  git add test.tx
+   89  git status
+   90  git commit
+   91  git status
+   92  ls -ltr
+   93  clear
+   94  cd ..
+   95  ls -ltr
+   96  cd gittest/
+   97  ls -ltr
+   98  ls -ltrah
+   99  rm -rf .git/
+  100  ls-ltr
+  101  ls -ltr
+  102  git status
+  103  cd ..
+  104  ls -ltr
+  105  rm -rf gittest/
+  106  mkdir caseylab
+  107  cd caseylab/
+  108  wget https://github.com/CaseyLabs/aws-ec2-ebs-automatic-snapshot-bash.git
+  109  yum install wget
+  110  wget https://github.com/CaseyLabs/aws-ec2-ebs-automatic-snapshot-bash.git
+  111  ls -ltr
+  112  clar
+  113  clear
+  114  ls -ltr
+  115  gitclone https://github.com/CaseyLabs/aws-ec2-ebs-automatic-snapshot-bash.git
+  116  git clone https://github.com/CaseyLabs/aws-ec2-ebs-automatic-snapshot-bash.git
+  117  ls -ltr
+  118  cat aws-ec2-ebs-automatic-snapshot-bash.git 
+  119  clear
+  120  git status
+  121  clear
+  122  ls -ltr 
+  123  rm -rf  aws-ec2-ebs-automatic-snapshot-bash.git
+  124  ls -ltr
+  125  git init
+  126  git status
+  127  git add *
+  128  git status
+  129  git commit -m "this is the intila source code"
+  130  clear
+  131  git status
+  132  ls -ltr
+  133  echo "hello world" >> test.txt
+  134  git status
+  135  git add test.txt 
+  136  git commit -m " added test.txt file"
+  137  git status
+  138  ls
+  139  rm -rf test.txt 
+  140  git status
+  141  git rm test.txt
+  142  git status
+  143  git commit -m "tet.txt file is deleted"
+  144  git status
+  145  clear
+  146  ls -ltr
+  147  ls
+  148  cd ..
+  149  ls -ltr
+  150  cd caseylab/
+  151  ls
+  152  toch "hello world" >> test.sh
+  153  cat "hello world" >> test.sh
+  154  toch "hello world" >> test.sh
+  155  touch "hello world" >> test.sh
+  156  git status
+  157  ls -ltr
+  158  git status
+  159  vim .gitignore
+  160  git status
+  161  yum update
+  162  clear
+  163  git status
+  164  ls
+  165  cd caseylab/
+  166  git status
+  167  cat .gitignore 
+  168  touch "pollo" >> tin.m
+  169  git status
+  170  ls -ltr
+  171  git status
+  172  cd ...
+  173  cd ..
+  174  cd caseylab/
+  175  ls -ltr
+  176  git status
+  177  cat tin.m 
+  178  vi tin.m 
+  179  ls
+  180  cd caseylab/
+  181  ls
+  182  vim tin.m 
+  183  cat tin.m 
+  184  git status
+  185  ls -ltr
+  186  rm tin.m 
+  187  git status
+  188  git rm .tin.m.swp 
+  189  ls -ltra
+  190  rm -rf .tin.m.swp 
+  191  ls -ltr
+  192  vim tin.m
+  193  git status
+  194  ls -ltr
+  195  touch "hemmlllo" >> hello.txt
+  196  ls -ltr
+  197  git status
+  198  touch "hemmlllo" >> hello.m
+  199  git add *
+  200  git status
+  201  clear
+  202  ls -ltr
+  203  git add test.sh
+  204  git status
+  205  ls ltr
+  206  ls -ltr
+  207  rm -rf hello world
+  208  git status
+  209  git rm hello world
+  210  git commit
+  211  git status
+  212  git add hello world
+  213  git add hello.txt
+  214  git add hemmlllo 
+  215  git add pollo 
+  216  git status
+  217  git commit -m "this is my second"
+  218  git status
+  219  clear
+  220  cd ..
+  221  ls -ltr
+  222  git clone test/ testclone
+  223  ls -ltr
+  224  cd testclone/
+  225  ls -ltrah
+  226  git statu
+  227  git status
+  228  clear
+  229  ls -ltr
+  230  ls ltrah
+  231  ls -ltrah
+  232  touch "hello world and" >> picha.txt
+  233  git status
+  234  ls -ltr
+  235  rm -rf hello\ world\ and 
+  236  rm picha.txt 
+  237  ls -ltr
+  238  git status
+  239  vi pika.txt
+  240  ls -ltr
+  241  git status
+  242  git commit -m "this is my duplicate"
+  243  git add pika.txt 
+  244  git statu
+  245  git status
+  246  git commit -m "this is my 1st duplicate copy"
+  247  cleat
+  248  clear
+  249  git status
+  250  cd ..
+  251  cd test
+  252  ls
+  253  cd ..
+  254  ls -ltr
+  255  cd test
+  256  git status
+  257  git add AWS-Prep/
+  258  git commit -m "this new file"
+  259  git status
+  260  clear
+  261  ls -ltr
+  262  cd ..
+  263  ls -ltr
+  264  git --version
+  265  cd testclone/
+  266  ls -ltr
+  267  cd ..
+  268  cd test
+  269  ls -ltr
+  270  git pull ../testclone/
+  271  ls -ltr
+  272  cd ../testclone/
+  273  git status
+  274  git push
+  275  clear
+  276  vim world.txt
+  277  git status
+  278  git add world.txt 
+  279  git status
+  280  git commit -m "htllo"
+  281  git push ../test
+  282  git config --global push.default matching
+  283  git config --global push.default simple
+  284  git push ../test
+  285  cd ..
+  286  cd test
+  287  clear
+  288  git status
+  289  ls -ltr
+  290  git pull ../testclone/
+  291  git status
+  292  ls -ltr
+  293  clear
+  294  cd ..
+  295  ls -ltr
+  296  ifconfig -a
+  297  clear
+  298  ls -ltr
+  299  ll
+  300  cd caseylab/
+  301  ls -ltr
+  302  ls -ltrah
+  303  git status
+  304  rm -rf  hello world
+  305  git status
+  306  ls
+  307  rm -rf hello world
+  308  ls -ltr
+  309  clea
+  310  clear
+  311  ls -ltr
+  312  mv  hello world  world
+  313  mv  hello world /tmp
+  314  ls -ltr
+  315  cd ..
+  316  ls -ltr
+  317  rm caseylab/
+  318  rm -rf caseylab/
+  319  rm -rf testclone/
+  320  rm -rf test/
+  321  clear
+  322  git clone git@github.com:oracle/docker-images.git
+  323  ls -ltr
+  324  cd docker-images/
+  325  ls -ltr
+  326  cd ..
+  327  cd docker-images/
+  328  git staus
+  329  git status
+  330  -
+  331  clear
+  332  cd ..
+  333  ls
+  334  cd docker-images/
+  335  ls -ltr
+  336  git status
+  337  clear
+  338  git tag tag1
+  339  git status
+  340  git tag
+  341  echo "tag1 post" > posttag.txt
+  342  git status
+  343  git add posttag.txt 
+  344  git commit -m "post tag1 commit"
+  345  git status
+  346  clear
+  347  git tag
+  348  git show tag1
+  349  clear
+  350  cd ..
+  351  ls -ltr
+  352  mkdir github
+  353  cd github/
+  354  git init
+  355  echo "hello world" > hello.txt
+  356  git add hello.txt 
+  357  git commit -m "this 1st commit"
+  358  git config --global user.name "Mahesh"
+  359  git config --global user.email "Maheshbabuadapa@gmail.com"
+  360  git config list
+  361  git config --global list
+  362  git config --global 
+  363  clear
+  364  history | grep git 
+  365   git config --list
+  366  clear
+  367  git status
+  368  vim .gitignor
+  369  git status
+  370  git add .gitignor 
+  371  git status
+  372  git commit -m "added .gitignor file"
+  373  git status
+  374  clear
+  375  ls
+  376  git tag v1
+  377  vim pello.txt
+  378  git status
+  379  git add *
+  380  git commit -m "added pello.txt"
+  381  git status
+  382  clear
+  383  git status
+  384  history
+  385  clear
+  386  git show v1
+  387  clear
+  388  git describe --tags
+  389  history
+  390  clear
+  391  git tag
+  392  ls
+  393  git show tag v1
+  394  history
+  395  git show v1
+  396  clear
+  397  vim hurry.txt
+  398  git status
+  399  git add *
+  400  git commit -m "added hurry.txt"
+  401  git status
+  402  git show v1
+  403  clear
+  404  git tag v2
+  405  git status
+  406  git show v2
+  407  git tag
+  408  git describe --tags
+  409  git tag
+  410  clear
+  411  git show v1
+  412  git show v2
+  413  clear
+  414  git describe --tags
+  415  git commit 
+  416  vim jaffa.txt
+  417  git status 
+  418  git add *
+  419  git commit -m "added jaffa.txt"
+  420  git tag -a v3 -m "version 3 release"
+  421  clear
+  422  git tag
+  423  git show v3
+  424  git status
+  425  clear
+  426  vim makesh.txt
+  427  git status 
+  428  git add *
+  429  git commit -m "added makesh.txt"
+  430  git show tags
+  431  git show tag
+  432  clear
+  433  git tag
+  434  git show v3
+  435  git tag -a v4 -m "this is version 4"
+  436  git tag
+  437  git show v4
+  438  clear
+  439  git describe --tag
+  440  history
+  441  clear
+  442  git status
+  443  git branch -a
+  444  git checkout -b development
+  445  git status
+  446  git -a branch
+  447    
+  448  clear
+  449  git status
+  450  git -a branch
+  451  git branch -a
+  452  ll
+  453  clear
+  454  git checkout master
+  455  git status
+  456  git branch -a
+  457  clear
+  458  ll
+  459  echo "this is master only" > master.txt
+  460  git status
+  461  git add master.txt 
+  462  git commit -m "this is added to master"
+  463  clear
+  464  ls -ltr
+  465  cd github/
+  466  git status
+  467  git branch -a
+  468  git checkout development
+  469  git status
+  470  clear
+  471  git status
+  472  ll
+  473  git checkout master
+  474  ll
+  475  git checkout development
+  476  ll
+  477  clear
+  478  history
+  479  clear
+  480  git status
+  481  ll
+  482  echo "this is development branch" > development.txt
+  483  git add development.txt 
+  484  git commit -m "this is for development"
+  485  ll
+  486  git checkout development
+  487  git checkout master
+  488  ll
+  489  history
+  490  clear
+  491  cd ..
+  492  ls -ltr
+  493  mkdir ch
+  494  cd ch
+  495  ls -ltr
+  496  git init
+  497  ls -ltrah
+  498  cd .git/
+  499  ls -lr
+  500  cat config 
+  501  history | grep git 
+  502  git config --global list
+  503  git config --list
+  504  git config --global user.name="ch"
+  505  git config --global user.name "ch"
+  506  git config --list
+  507  git config --global user.name "Mahesh"
+  508  git config --list
+  509  clear
+  510  cd ..
+  511  ls -ltr
+  512  cd ..
+  513  ls -ltr
+  514  mkdir mb
+  515  cd mb/
+  516  git status
+  517  cd ../ch/
+  518  git status
+  519  clea
+  520  clear
+  521  ls -ltr
+  522  echo "hello world" > hello.txt
+  523  ls -ltr
+  524  git status 
+  525  git add hello.txt 
+  526  git stauts
+  527  git status
+  528  echo "hello ch" > pello.txt
+  529  git status
+  530  git add *
+  531  git status
+  532  git commit 
+  533  git status
+  534  echo "jlhdgkh" > hurry.txt
+  535  git status
+  536  git add *
+  537  git status
+  538  git commit -m "this is 2nd commit"
+  539  ls -ltr
+  540  echo "wkkhddfadf" > harry.txt
+  541  echo "jaddhagfhfal" > porry.txt
+  542  git status
+  543  git add *
+  544  git status
+  545  git commit harry.txt -m "this only one file"
+  546  git status
+  547  git commit -m " next file"
+  548  clear
+  549  ls -ltr
+  550  echo "ajgadgfkadgf" > jaffa.m
+  551  ls -ltr
+  552  vim .gitignore
+  553  git status
+  554  echo "hello woeld" > jaffa.txt
+  555  git status
+  556  ls -ltr
+  557  git add *
+  558  git status
+  559  git add jaffa.txt 
+  560  git status
+  561  git commit -m "this is another commit"
+  562  clear
+  563  ls -ltr
+  564  rm -rf jaffa.m
+  565  rm -rf porry.txt 
+  566  git status
+  567  git add porry.txt
+  568  cleAR
+  569  clear
+  570  git status
+  571  git rm porry.txt
+  572  git status
+  573  git commit -m "this deleted"
+  574  clear
+  575  ls -ltr
+  576  rm -rf hello.txt 
+  577  git status
+  578  ls -ltr
+  579  git ls-file --deleted
+  580  git ls-files --deleted
+  581  git checkout -- hello.txt
+  582  ls -ltr
+  583  git status
+  584  git log 
+  585  cd ..
+  586  cd ch
+  587  git status
+  588  git checkout -b dev
+  589  git checkout 
+  590  git brach -a
+  591  git branch -a
+  592  ls -ltr
+  593  echo "hello world wwww" > dev.txt
+  594  ls -ltr
+  595  git status
+  596  git add *
+  597  git status
+  598  git commit -m "this branch commit"
+  599  ls -ltr
+  600  git checkout master
+  601  git branch -a
+  602  ls -ltr
+  603  git checkout dev
+  604  ls -ltr
+  605  rm hurry.txt 
+  606  git status 
+  607  ls -ltr
+  608  git checkout --hurry.txt
+  609  git checkout -- hurry.txt
+  610  cat /etc/*release
+  611  clear
+  612  cd ..
+  613  ls -ltr
+  614  git clone ch /ch1
+  615  ls -ltr
+  616  cd /
+  617  ls ltr
+  618  ls -ltr
+  619  cd ch1/
+  620  ls -ltr
+  621  echo "hello worl" > deelo.txt
+  622  git status
+  623  git branch -a
+  624  exit
+  625  yum update
+  626  clear
+  627  ls -ltr
+  628  cd ch
+  629  git status
+  630  git branchs
+  631  git branch
+  632  ls -ltr
+  633  git checkout maser
+  634  git checkout master
+  635  ls -ltr
+  636  git merge dev --no-ff
+  637  git branch
+  638  ls -ltr
+  639  git log
+  640  clear
+  641  git log -p -2
+  642  git log --stat
+  643  git --pretty"oneline
+  644  "
+  645  git --pretty=format:"
+  646  git log --pretty=oneline
+  647  git log --pretty=format:"%h: %an, %ae, %cn, %cd, - %s"
+  648  clear
+  649  git log --pretty=format:"%h: %an, %ae, %cn, %cd, - %s" --graph
+  650  clear
+  651  cd ..
+  652  ls -ltr
+  653  cd /
+  654  ls -ltr
+  655  mv ch1 ~
+  656  cd ~
+  657  ls -ltr
+  658  cd ch1
+  659  git status
+  660  clear
+  661  cd ..
+  662  ls -ltr
+  663  cp -rf ch ch3
+  664  ls -ltr
+  665  cd ch3
+  666  git status
+  667  cd ..
+  668  ls -ltr
+  669  git clone ch ch4
+  670  cd ch4/
+  671  git status
+  672  ls -ltr
+  673  git branch
+  674  cd ..
+  675  cd ch1/
+  676  git status
+  677  git branchs
+  678  git branch
+  679  cd ...
+  680  cd ..
+  681  clear
+  682  ls ltr
+  683  ls -ltr
+  684  rm -rf ch1 ch3 ch4
+  685  cd mb/
+  686  git status
+  687  git init
+  688  echo "hello world" > hello.txt
+  689  git add hello.txt 
+  690  git commit -m "this 1st commit"
+  691  git status
+  692  clear
+  693  cd ..
+  694  ls -ltr
+  695  git clone mb mb1
+  696  cd mb1
+  697  ls -ltr
+  698  git status
+  699  clear
+  700  cd ..
+  701  ls ltr
+  702  ls -ltr
+  703  cp -r mb mb5
+  704  cd mb5/
+  705  git status
+  706  cd ..
+  707  ls -ltr
+  708  rm mb5/
+  709  rm -rf  mb5/
+  710  clear
+  711  ls -ltr
+  712  cd mb1/
+  713  echo "this another file" > jllo.txt
+  714  git add *
+  715  git commit -m "this is clone 1st commit"
+  716  cd ..
+  717  ls -ltr
+  718  cd mb
+  719  ls
+  720  git pull ../mb1
+  721  ls -ltr
+  722  cd ..
+  723  cd mb1/
+  724  ls -ltr
+  725  echo "this 2nd file" > pillo.txt
+  726  cd ..
+  727  cd -ltr
+  728  clear
+  729  ls -ltr
+  730  cd mb1/
+  731  ls -ltr
+  732  cd ..
+  733  cd mb
+  734  ls -ltr
+  735  cd ..
+  736  cd mb1/
+  737  ls -ltr
+  738  git push ../mb
+  739  git --help
+  740  git push  ../mb master
+  741  cd ..
+  742  cd mb
+  743  ls -ltr
+  744  cd ..
+  745  cd mb1/
+  746  ls -ltr
+  747  git status
+  748  git add *
+  749  git commit -m "this push commit"
+  750  git push  ../mb master
+  751  cd ..
+  752  cd mb
+  753  ls -ltr
+  754  git status
+  755  cd ..
+  756  cd mb1
+  757  git status
+  758  clear
+  759  git status
+  760  cd ..
+  761  ls -ltr
+  762  cd mb1
+  763  ls
+  764  git push pillo.txt ../mb master
+  765  clear
+  766  cd ..
+  767  cd mb
+  768  ls -ltr
+  769  git pull ../mb1/
+  770  cd ..
+  771  cd mb1`
+  772  ls -ltr
+  773  cd mb1/
+  774  ls -ltr
+  775  git push ../mb master
+  776  ls -ltr
+  777  echo "thohja" > rllo.txt
+  778  ls -ltr
+  779  git add rllo.txt 
+  780  git commit -m "this next commit"
+  781  git push ../mb master
+  782  git status
+  783  git push origin master
+  784  clear
+  785  cd ..
+  786  ls -ltr
+  787  cd mb1/
+  788  git push ../mb master
+  789  cd ..
+  790  cd mb
+  791  ls -ltr
+  792  git init --bare
+  793  ls -ltr
+  794  ls -ltrah
+  795  cd ..
+  796  cd mb
+  797  git status
+  798  cd ..
+  799  cd mb1/
+  800  ls -ltr
+  801  git push ../mb master
+  802  clear
+  803  cd ..
+  804  ls -ltr
+  805  rm -rf mb*
+  806  cd ch/
+  807  git status
+  808  ls -ltr
+  809  git tags
+  810  git tag
+  811  clear
+  812  git add *
+  813  git status
+  814  git tag v1
+  815  git tag
+  816  git show v1
+  817  echo "this next tag commit" > gllo.txt
+  818  git add gllo.txt 
+  819  git commit -m "this for testing tag 2"
+  820  git tag v2
+  821  git show tag
+  822  clear
+  823  git tag
+  824  git show v1
+  825  git show v2
+  826  git describe --tags
+  827  clear
+  828  git branch
+  829  git branch -b qa
+  830  clear
+  831  git checkout -b qa
+  832  git branch
+  833  ls -ltr
+  834  echo " this is branch qa file" > qa.txt
+  835  ls -ltr
+  836  git add *
+  837  git commit -m "this qa branch"
+  838  ls -ltr
+  839  git branch
+  840  git checkout master
+  841  ls -ltr
+  842  git checkout qa
+  843  git branch
+  844  git checkout -b qa1
+  845  git branch
+  846  ls -ltr
+  847  git check
+  848  git checkout -a
+  849  git branch
+  850  ls -ltr
+  851  echo "this qa1" > qa1.txt
+  852  git add*
+  853  git add *
+  854  git status
+  855  git commit -m "this is qa1 commit"
+  856  git status
+  857  git checkout dev
+  858  ls -ltr
+  859  git merge qa1 --no-ff
+  860  git log --pretty=format:"%h: %an, %ae, %cn, %cd, - %s" --graph
+  861  git log
+  862  git log -p -2
+  863  git log -pretty=oneline
+  864  git log --pretty=oneline
+  865  ls -ltr
+  866  git clone git@github.com:maheshbabuadapa/AWS-Prep.git
+  867  ls -ltr
+  868  cd AWS-Prep/
+  869  ls-ltr
+  870  ls -ltr
+  871  vim AWS-Commands 
+  872  git status
+  873  git add
+  874  git add *
+  875  git commit -m "Changed the user,metal data commands"
+  876  git push orgin master
+  877  history
+  878  git config --global list
+  879  git config --list
+  880  git push origin master
+  881  clear
+  882  ls -ltr
+  883  cd AWS-Prep/
+  884  ls -ltr
+  885  git status
+  886  git checkout -b dev
+  887  git status
+  888  ls -ltr
+  889  vim vpc.yml
+  890  git status
+  891  git add *
+  892  git commit -m "Adding intial VPC creation file"
+  893  git push origin dev
+  894  history
+  895  cd ..
+  896  ls -ltr
+  897  cd AWS-Prep/
+  898  ls -ltr
+  899  git branch
+  900  git checkout master
+  901  git merge dev --no-ff
+  902  git status
+  903  git branch
+  904  ls -ltr
+  905  git push origin master
+  906  yum update
+  907  ls -ltr
+  908  cd AWS-Prep/
+  909  git status
+  910  clear
+  911  ls -ltr
+  912  git pull origin master
+  913  ls -ltr
+  914  vi ebs.yml 
+  915  git status
+  916  git add *
+  917  git commit -m "edited ebs.yml file"
+  918  git push origin master
+  919  systemctl restart sshd
+  920  ls -ltr
+  921  cd AWS-Prep/
+  922  ls -ltr
+  923  git status
+  924  git branch
+  925  git pull origin master
+  926  ls -ltr
+  927  git merge dev
+  928  git branch -d dev
+  929  git branch
+  930  git status
+  931  git commit -m "branch deleted"
+  932  git tag v1
+  933  git tag
+  934  git show v1
+  935  git push origin master
+  936  git push -d origin dev
+  937  git push origin --delete dev
+  938  ls -ltr
+  939  cd ..
+  940  history
+  941  ls
+  942  cd AWS-Prep/
+  943  history >> git.history
