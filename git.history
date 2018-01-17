@@ -941,3 +941,211 @@
   941  ls
   942  cd AWS-Prep/
   943  history >> git.history
+    1  cd Downloads/
+    2  cp test\ \(1\).pem ~
+    3  cd ~
+    4  ls
+    5  mv test\ \(1\).pem test.pem
+    6  ls -ltr
+    7  clear
+    8  ssh -i test.pem cento@ec2-34-229-95-105.compute-1.amazonaws.com
+    9  chmod 644 test.pem 
+   10  ssh -i test.pem cento@ec2-34-229-95-105.compute-1.amazonaws.com
+   11  chmod 400 test.pem 
+   12  ssh -i test.pem cento@ec2-34-229-95-105.compute-1.amazonaws.com
+   13  clear
+   14  cd .ssh/
+   15  ls -ltr
+   16  vi known_hosts 
+   17  ssh -i test.pem centos@ec2-34-229-95-105.compute-1.amazonaws.com
+   18  ssh -i "test.pem" root@ec2-34-229-95-105.compute-1.amazonaws.com
+   19  ls -ltr
+   20  cd ~
+   21  ssh -i test.pem centos@ec2-34-229-95-105.compute-1.amazonaws.com
+   22  ssh -i test.pem centos@ec2-52-91-217-51.compute-1.amazonaws.com
+   23  ssh -i test.pem centos@ec2-52-91-217-51.compute-1.amazonaws.com
+   24  git --version
+   25  clear
+   26  ls -ltr
+   27  git init bits
+   28  cd bits/
+   29  brew tree
+   30  tree
+   31  brew install tree
+   32  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   33  brew install tree
+   34  clear
+   35  while; do; clear; tree .git; sleep 1; done
+   36  while; do; clear; tree .git; sleep 1; done;
+   37  while;do;clear;tree .git;sleep 1;done
+   38  while; do; clear; tree .git; sleep 1; done;
+   39  clear
+   40  ls -ltr
+   41  ls -ltrah
+   42  while; do; clear; tree .git; sleep 1; done
+   43  tree .git
+   44  ls -ltr
+   45  mkdir centos
+   46  cd centos/
+   47  vagrant init centos7
+   48  ls -ltr
+   49  vi  Vagrantfile 
+   50  vagrant up
+   51  ls
+   52  rm -r Vagrantfile 
+   53  vagrant init centos/7
+   54  vi Vagrantfile 
+   55  vagrant up
+   56  vagrant ssh
+   57  vi nginx.yml
+   58  mv nginx.yml nginx.yaml
+   59  ls -ltr
+   60  mv nginx.yaml Downloads/
+   61  curl http://localhost:8001/version
+   62  export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+   63  echo Name of the Pod: $POD_NAME
+   64  curl http://localhost:8001/api/v1/proxy/namespaces/default/pods/$POD_NAME/
+   65  curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl
+   66  ls -ltr
+   67  chmod +x ./kubectl
+   68  ls -ltr
+   69  mv kubectl /usr/local/bin/kubectl
+   70  kubectl cluster-info
+   71  curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.24.1/minikube-darwin-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+   72  minikube
+   73  minikube start
+   74  minikube version
+   75  kubectl cluster-info
+   76  kubectl cluster-info dump
+   77  clear
+   78  minikube stop
+   79  minikube start
+   80  kubectl cluster-info
+   81  netstat -tulnp
+   82  netstat 
+   83  clear
+   84  minikube dashboard
+   85  kubectl version
+   86  kubectl get nodes
+   87  kubectl run kubernetes-bootcamp --image=docker.io/jocatalin/kubernetes-bootcamp:v1 --port=8080
+   88  kubectl get deployments
+   89  ssh -i "test.pem" centos@ec2-54-224-98-104.compute-1.amazonaws.com
+   90  ssh -i "test.pem" centos@ec2-52-207-227-84.compute-1.amazonaws.com
+   91  ssh -i test.pem centos@ec2-54-224-98-104.compute-1.amazonaws.com
+   92  ls -ltr
+   93  cd bits/
+   94  git status
+   95  cd ..
+   96  rm -rf bits/
+   97  clear
+   98  git clone git@github.com:maheshbabuadapa/AWS-Prep.git
+   99  cd .ssh/
+  100  ls -ltr
+  101  ssh-keygen -t rsa
+  102  ls  -ltr
+  103  cat id_rsa.pub 
+  104  clear
+  105  ls
+  106  cd ~
+  107  ls -ltr
+  108  git clone git@github.com:maheshbabuadapa/AWS-Prep.git
+  109  ls -ltr
+  110  cd AWS-Prep/
+  111  git config --list
+  112  git config --global user.name "Mahesh"
+  113  git config --global user.email maheshbabuadapa@gmail.com
+  114  git config --list
+  115  git fetch
+  116  git remote
+  117  git fetch origin
+  118  git cherry-pick
+  119  pwd
+  120  locate vagrant
+  121  cd ~
+  122  ls
+  123  cd Downloads/
+  124  l
+  125  ll
+  126  ls
+  127  ls | grep vagrant
+  128  clear
+  129  cd Atom.app/
+  130  cd ..
+  131  ls -ltr
+  132  cd ~
+  133  ls -ltr
+  134  cd AWS-Prep/
+  135  ls -ltr
+  136  git branchs
+  137  git branch
+  138* git 
+  139  git branch
+  140  git fetch origin qa
+  141  git branch
+  142  git pull origin 
+  143  git branch
+  144  git pull origin qa
+  145  git branch
+  146  ls -ltr
+  147  git log
+  148  git branch
+  149  git checkout -b dev
+  150  git status
+  151  git branch
+  152  git checkout master
+  153  ls
+  154  vi vpn.yml 
+  155  git status
+  156  git add *
+  157  git commit -m "testing for rebase"
+  158  git status
+  159  clear
+  160  git checkout -b dev1
+  161  ls -ltr
+  162  git branch
+  163  git log --graph
+  164  clear
+  165  git branch
+  166  ls
+  167  vi vpc.yml 
+  168  git add *
+  169  git commit -m "Changes done in VPC.yml and testing rebase"
+  170  git log
+  171  clear
+  172  git -help
+  173  git --help
+  174  clear
+  175  clear
+  176  git branch
+  177  ls
+  178  vi s3.yml 
+  179  git add *
+  180  git commit -m "this is test for 2nd rebase"
+  181  git --help
+  182  git checkout master
+  183  git branch
+  184  git rebase dev1
+  185  git log
+  186  clear 
+  187  git log master
+  188  git checkout dev
+  189  git log
+  190  clear
+  191  git status
+  192  git log master
+  193  clear
+  194  git checkout -d dev1
+  195  git branch
+  196  git git branch -d dev1
+  197  git branch -d dev1
+  198  git checkout master
+  199  ls -ltr
+  200  cat s3.yml 
+  201  git status
+  202  git branch -D dev1
+  203  git log
+  204  cat s3.yml 
+  205  clear
+  206  git log
+  207  clear
+  208  history >> git.history 
