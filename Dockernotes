@@ -1,0 +1,50 @@
+Docker Installing
+
+yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+
+  yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+    yum install docker-ce
+
+  systemctl start docker
+  systemctl  enable docker
+  docker images
+  docker run container -d --name container name  Image name
+
+  Changing Docker Storage Driver to devicemapper
+  Check current Storage Driver by using command (docker info)
+  vi /etc/Docker/daemon.json
+  Add below
+  {
+"storage-driver": "devicemapper"
+}
+ Restart Docker (docker restart)
+ check docker info | grep storage Driver
+
+ Changing Docker logging Driver from json to local rsyslog
+ We can find the logs of container default by command docker logs and it is in Json format but we would like to send all these logs to host system logs
+ for that we need to activate rsyslog in host system
+ vi /etc/rsyslog.config
+ uncomment below lines in the configuration file
+ $ModLoad imudp
+ $UDPServerRun 514
+ Add below lines to vi /etc/Docker/daemon.json
+ {
+"storage-driver": "devicemapper",
+"log-driver": "syslog",
+"log-opts":{
+	"syslog-address": "udp://172.28.128.3:514"
+	}
+}
+Restart Docker (docker restart)
+docker info | grep Logging
+Logging Driver: syslog
+
+Now by default all docker logs will be viewed under /var/logs/messages
+But you want to have custom logs for single container the run below command
+docker container run -d --name Container Name --log-driver json-file Image name
+Example: docker container run -d --name testjson --log-driver json-file httpd
