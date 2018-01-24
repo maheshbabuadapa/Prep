@@ -51,8 +51,14 @@ docker container run -d --name Container Name --log-driver json-file Image name
 Example: docker container run -d --name testjson --log-driver json-file httpd
 
 Setting up Docker Swarm
+Creating docker manager
  docker swarm init --advertise-addr 172.28.128.3 ( Ip address of host system)
- save below token
-  docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8jx64whhc6j06bsstnx8e9zob 172.28.128.3:2377
-To redisplay the above token use below command
+To add new docker worker use below command
 docker swarm join-token worker
+To add a manager to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8dm3cj42mpygdz4a11p6k5yo9 172.28.128.3:2377
+if you want to create another manager
+docker swarm join-token manager
+To add a manager to this swarm, run the following command:
+docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8dm3cj42mpygdz4a11p6k5yo9 172.28.128.3:2377
