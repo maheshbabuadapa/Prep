@@ -62,3 +62,13 @@ if you want to create another manager
 docker swarm join-token manager
 To add a manager to this swarm, run the following command:
 docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8dm3cj42mpygdz4a11p6k5yo9 172.28.128.3:2377
+
+Adding Node to Docker swarm
+Take a new linux box and install docker on it
+collect worker  token from leader Docker instance and run in new linux box
+check nodes by using command docker node ls
+example
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS
+n8685zrzad8g59k8by6hklz6u     jenkins             Ready               Active
+l7hduli1wetixu1s4mz1ozy7c *   kube                Ready               Active              Leader
+ 
