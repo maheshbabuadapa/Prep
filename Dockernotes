@@ -46,6 +46,6 @@ docker info | grep Logging
 Logging Driver: syslog
 
 Now by default all docker logs will be viewed under /var/logs/messages
-But you want to have custom logs for single container the run below command
+But if you want to have custom logs for single container run the below command
 docker container run -d --name Container Name --log-driver json-file Image name
 Example: docker container run -d --name testjson --log-driver json-file httpd
