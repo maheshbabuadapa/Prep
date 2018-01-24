@@ -89,7 +89,7 @@ pqhoe0i81vur        bkupweb.1           httpd:latest        kube                
 51ugw77b1nue        bkupweb.2           httpd:latest        node2               Running             Running less than a second ago
 Note: Check in other nodes by docker ps to confirm
 
-Create Docker  swarm backup and restore 
+Create Docker  swarm backup and restore
 Stop docker in manager (systemctl stop docker)
 Take copy of /var/lib/docker/swarm
 tar -zcvf swarm.tar.gz
@@ -101,3 +101,55 @@ check you docker cluster is working by (docker service ls)
 docker service ps
 The cool thing what about this is As long as a health cluster you take backup of swarm directory is fine to create whole cluster
 we don't even needed docker images also all we need swarm directory
+
+Outline the Sizing Requirements Prior to Installation
+Cluster Sizing Requirements
+It depends in general,Sizing your environment for a Docker Swarm cluster is going to
+be the same process that you would use for any application in your ecosystem.
+you would need to consider things like:
+1.CPU,Memory and Disk
+    Your containerized application will have the same Requirements that it would if Running
+    on other infrastructure (physical or virtual). Be sure your underlying hosts(s)
+    have the necessary horsepower.
+2.Concurrency
+   What are the load requirements of the application at peak and in total?
+  These will determine optimal placement and the amount of hardware resources(Constraints)
+  you need to allocate.
+
+  Universal Control Plane(UPC)
+  Docker Universal Control Plane (UCP) is the enterprise-grade cluster management solution from Docker.
+  You install it on-premises or in your virtual private cloud,
+  and it helps you manage your Docker swarm and applications through a single interface.
+  For Universal Control Plane(UPC) system requirements follow below link
+  https://docs.docker.com/datacenter/ucp/2.1/guides/admin/install/system-requirements/#network-requirements
+
+
+  Docker Trusted Registry (DTR)
+  Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker.
+  You install it behind your firewall so that you can securely store and manage the Docker images you use in your applications
+
+  Minimum Requirements
+  8gb RAM (MANAGER or DTR Nodes)
+   4gb RAM (Workers)
+   3gb Free Disk
+
+   Recommended Requirements
+   16gb RAM (MANAGER or DTR Nodes)
+   4vCPU (Workers or DTR Nodes)
+   25-100gb Disk Space
+
+   3. Performance Considerations (Timing)
+      We need take network Performance
+
+      Special Notes
+      Docker EE includes
+        . Docker Engine with Support
+        . Docker Trusted Registry
+        . Universal Control Plane
+      Compatibility
+         . Docker Engine 17.06+
+         . DTR 2.3+
+         . UCP 2.2+
+        Recommendations
+        . Plan for Load Balancing
+        . Use External Certificate Authority for Production
