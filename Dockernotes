@@ -153,3 +153,11 @@ you would need to consider things like:
         Recommendations
         . Plan for Load Balancing
         . Use External Certificate Authority for Production
+
+Set Up and configuration Universal Control Plan(UCP) and Docker Trusted Repository(DTR) for Secure Cluster
+management
+
+Setting up Universal Control Plan(UCP)
+Make sure atlest 2 GB of ram befor running blow command to set up UCP
+docker container run --rm -it --name ucp -v /var/run/docker.sock:/var/run/docker.sock docker/ucp:2.2.4 install
+--host-address 172.28.128.3 --interactive
