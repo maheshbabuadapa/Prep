@@ -71,4 +71,33 @@ example
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS
 n8685zrzad8g59k8by6hklz6u     jenkins             Ready               Active
 l7hduli1wetixu1s4mz1ozy7c *   kube                Ready               Active              Leader
- 
+
+ How to create Service in Docker swarm
+ Every service is created from Docker Leader
+ docker service create --name (name of service) --publish(port) 80:80 --replicas 2 images
+ Example: docker service create --name bkupweb --publish 80:80 --replicas 2 httpd
+Check you service  docker service ls
+Example
+[root@kube ~]# docker service ls
+ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
+12r8jg2xiypv        bkupweb             replicated          2/2                 httpd:latest        *:80->80/tcp
+Check you service on which node it is working
+Example
+docker service ps bkupweb
+ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE                    ERROR               PORTS
+pqhoe0i81vur        bkupweb.1           httpd:latest        kube                Running             Running 4 minutes ago
+51ugw77b1nue        bkupweb.2           httpd:latest        node2               Running             Running less than a second ago
+Note: Check in other nodes by docker ps to confirm
+
+Create Docker  swarm backup and restore 
+Stop docker in manager (systemctl stop docker)
+Take copy of /var/lib/docker/swarm
+tar -zcvf swarm.tar.gz
+Copy the swarm.tar.gz file to different Docker manager and un tar to location /var/lib/docker
+To re-initialize your backup use the below command
+docker swarm init --force-new-cluster
+Then you will get token
+check you docker cluster is working by (docker service ls)
+docker service ps
+The cool thing what about this is As long as a health cluster you take backup of swarm directory is fine to create whole cluster
+we don't even needed docker images also all we need swarm directory
