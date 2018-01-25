@@ -15,6 +15,7 @@ yum install -y yum-utils \
   View docker images (docker images)
   Get docker images from docker hub ( docker pull image Name)
   To run the docker container in background  docker run container -d --name container name  Image name
+  docker run -itd --name test1 httpd /bin/bash
 
   Changing Docker Storage Driver to devicemapper
   Check current Storage Driver by using command (docker info)
