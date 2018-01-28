@@ -20,7 +20,7 @@ apt install docker.io
 
 Both the docker and Kubelet needs to use cgroup driver
 to ensure that
-touch /etc/docker/daemon.josn
+vi /etc/docker/daemon.json
 add below code in it
 {
 "exec-opts":["native.cgroupdriver=systemd"]
@@ -37,3 +37,27 @@ apt update
 apt install -y kubelet kubeadm kubectl
 kubeadm init --pod-network-cidr=10.244.0.0/16
 kubeadm join --token e2900d.395baf77378a0ef4 10.0.2.15:6443 --discovery-token-ca-cert-hash sha256:7b3594a5e2bf93864453a7e83d9c56616232c9f10bb0668c51d8b657bbcff5d4
+
+To access kubectl
+     mkdir -p $HOME/.kube
+     cp -i /etc/kubernetes/admin.conf /root/.kube/config
+     kubectl get pods --all-namespaces
+
+To access kubectl from user
+       sudo cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+       chown $(id -u):$(id -g) /home/vagrant/.kube/config
+       sudo chown $(id -u):$(id -g) /home/vagrant/.kube/config
+       kubectl get pods --all-namespaces
+
+Try to learn about CNI(container networking)
+To add flannel plugin network to kubernetes use below command
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml
+Then Check for kubectl get pods --all-namespaces
+On Our Master node you can see
+  Etcd Container
+  Kube-Scheduler Container
+  kube-controller Container
+  kube-dns Container
+  kube-proxy
+  Try yo refer to the diagram
+To see number of nodes connected use this command kubectl get nodes

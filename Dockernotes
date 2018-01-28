@@ -58,7 +58,7 @@ To add new docker worker use below command
 docker swarm join-token worker
 To add a manager to this swarm, run the following command:
 
-    docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8dm3cj42mpygdz4a11p6k5yo9 172.28.128.3:2377
+docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8dm3cj42mpygdz4a11p6k5yo9 172.28.128.3:2377
 if you want to create another manager
 docker swarm join-token manager
 To add a manager to this swarm, run the following command:
