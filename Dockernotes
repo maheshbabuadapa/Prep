@@ -162,3 +162,61 @@ Setting up Universal Control Plan(UCP)
 Make sure atlest 2 GB of ram befor running blow command to set up UCP
 docker container run --rm -it --name ucp -v /var/run/docker.sock:/var/run/docker.sock docker/ucp:2.2.4 install
 --host-address 172.28.128.3 --interactive
+
+
+
+
+
+Docker Image layers
+This video describes how docker image layer works
+Docker files determine number of intermediate layers or containers that are combined to form image.
+“docker images” shows only number of images present in the system
+“docker image history image name”
+above command show you each of the layer for that particular image
+look for the LABEl name you can find the base image of the image we built.
+Docker uses the Union file system
+Union file system basically always files and directories of separate file system over layed to form single file system.
+Too see complete structure of the layer use below command
+“docker history imagename:version - - no - true”
+when you try to add the size of  individual layer of the docker images is equivalent to complete docker image size.
+Modify image to single layer ( officially there is no way to flatten the image)
+when you type “docker history imagename:version “ you can see multiple layer present in the docker image and their details
+By consolidating the all layers to single layer you can gain space
+The way to do this we ne need to start container from the image we have “docker run imagename:version”
+“docker ps -a”
+We can export the container and import to image
+“docker export container:name > newimage.tar”
+complete container moved up to tar file this tar file can be moved different system if you want to.
+We can import above tar file by using
+“docker import newimage.tar newimagename:v1”
+As soon as you imported to new image you will lost all your visibility of the layer history and you can only single layer.
+check using “ docker history imagename - - no - true”
+you can find only single layer and there is change in size. ( docker squash look for this tool)
+
+Docker storage drivers
+Normally  docker volumes are used to write data to the containers.
+Container are abstract and portable if you start writing data to the container it is very difficult to portable even increases complexity.
+So Docker does pluggable architecture It supports  multiple storage drives and control images and containers stored on docker host.
+ Write some notes on devicemapper storage driver
+
+Secure Docker registry
+Docker registry nothing but a docker hub where you pull docker images securely
+Now we are creating docker registry in secure way which continues
+for this we need to generate  self signed certificates using openssl ( yum install openssl)
+mkdir certs
+mkdir auth
+Generating ssl certificate
+“openssl req  -newkey rsa:4096 -nodes -sha256 -keyout certs/dockerrepo.key -x509 -days 365 -out certs/dockerrepo.crt -subj CN=myregistrydomain.com”
+which creates 2 file dockerrepo.crt, dockerrepo.key
+
+Here we are creating docker registry under the domain name “myregistrydomain.com”
+add above domain name under vi /etc/hosts
+ipaddress myregistrydomain.com
+By default docker registry uses port 5000
+“mkdir -p /etc/docker/certs.d/myregistrydomain.com:5000”
+copy the dockerrepo.crt file to above created directory and rename to ca.crt
+then follow the below commands
+“docker pull registry:2”
+“docker run - - entrypoint htpasswd registry:2 -Bbn test password > auth/htpasswd”
+In above command we run the registry:2 and added test user and put password to it
+you can check their details in cat  /auth/htpasswd
