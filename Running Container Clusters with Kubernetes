@@ -1,0 +1,97 @@
+Introduction to kubernetes
+
+Commonly referred to its internal designation during the development
+at Google(k8s),
+kubernetes is an open source container cluster manager.
+kubernetes primary goal is to provide a platform for
+automating deployment, scaling and operations of application
+container across a cluster of hosts.
+
+components - Building Block of kubernetes
+  Nodes
+  Pods
+  Labels
+  Selectors
+  Controllers
+  Services
+  Control Pane
+  API
+
+Nodes(Minions)
+ You can think of these as "container Client".These are the individual
+ hosts (physical or virtual) that Docker is installed on the hosts the
+ various containers within your managed cluster.
+
+ Each Minion will run ETCD (a key pair management and communication service, used
+ by kubernetes for exchanging messages and reporting on cluster status)
+ as well as the Kubernetes Proxy.
+
+Pods
+A pod consists of one or more container. Those containers are guaranteed
+(by the cluster controller) to be located on the same host machine in order to
+facilitate sharing of resources
+
+Pods are assigned unique IPs within each cluster. These allow an application to used
+ports without having to worry about conflicting port utilization.
+
+Pods can contains definitions of disk volumes or share, and then provide access from
+those to all the members(containers) within the pod.
+
+Finally, pod management is done through the APT or delegated to a controller
+
+Labels
+Clients can attach "key-value pairs" to any object in the system (like pods or Nodes(minions)).
+These become the labels that identify them in the configuration and management of them.
+
+Selectors
+Label Selectors represent queries that are made against those labels.
+They resolve to the corresponding matching objects.
+
+These two items are the primary ways that grouping is done in kubernetes and determine
+which components that a given operations applies to when indicated.
+
+Controllers
+These are used in the management of your cluster. Controllers are the mechanism by which
+your desired configuration state is enforced.
+
+Controllers manage a set of pods and, depending on the desired configuration state, may
+engage other controller to handle replication and scaling (Replication Controller)
+of xx number of container and pods across the cluster.
+it is also responsible for replacing any container in a pod
+that fails(based on the desired state of the cluster).
+
+Other controllers that can be engaged including a DaemonSet Controller(enforces a 1 to 1 ratio
+of pods to minions) and a job Controller (that runs pods to "completion", such as in batch jobs).
+
+Each set of pods any controller manages, is determined by the label selectors that are part of its definition.
+
+Services
+A pod consists of one or more container. Those containers are guaranteed
+(by the cluster controller) to be located on the same host machine in order to
+facilitate sharing of resources
+
+This is so that pods can 'work together', like in a multi-tiered application configuration. Each set of Pods
+that define and implement a service (like MYSQL or Apache) are defined by the label selectors.
+
+Kubernetes can then provide service discovery and handle routing with the static IP for
+each pod as well as load balancing (round robin based) connections to that service among the pods that
+match the label selectors indicated.
+
+By default, although a service is only exposed inside a cluster, it can also be exposed outside a cluster
+as needed.
+
+Packages and Dependencies
+yum install -y ntp ( to perfect synchronize time all over the serves)
+systemctl enable ntpd && systemctl start ntpd && systemctl status ntpd
+Add vi /etc/hosts
+ip address kubernetes:Master
+Ip address kubernetes:Nodes
+
+adding the repository
+vi /etc/yum.repos.d/virt7-docker-common-release.repo
+ [virt7-docker-common-release]
+ name=virt7-docker-common-release
+ baseurl=http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+ gpgcheck=0
+yum update
+yum  install --enablerepo=virt7-docker-common-release etcd kubernetes docker

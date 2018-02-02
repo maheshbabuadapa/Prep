@@ -1,3 +1,19 @@
+Docker Architecture
+    Docker is a client-server application where both the daemon and
+    client can be run on the same system or you can connect a Docker
+    client with a remote Docker daemon.
+
+    Docker client and daemons communicate via sockets or through a
+    Restful API (Respersentational State Transfer -it is a
+    stateless Transfer over HTTP of a web page containing an XML files
+    that describes and includes the desired content).
+
+    The main components of Docker are:
+       Daemon
+       client
+       Docker.io Registry
+
+
 Docker Installing
 
 yum install -y yum-utils \

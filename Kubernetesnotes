@@ -61,6 +61,3 @@ On Our Master node you can see
   kube-proxy
   Try yo refer to the diagram
 To see number of nodes connected use this command kubectl get nodes
-DNS, stands for Domain Name System, translates hostnames or URLs into IP addresses. For example, if we type www.unixmen.com in browser, the DNS server translates the domain name into its associated ip address. Since the IP addresses are hard to remember all time, DNS servers are used to translate the hostnames like www.unixmen.com to 173.xxx.xx.xxx. So it makes easy to remember the domain names instead of its IP address.
-
-This detailed tutorial will help you to set up a local DNS server on your CentOS 7 system. However, the steps are applicable for setting up DNS server on RHEL and Scientific Linux 7 too.
