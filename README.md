@@ -1,3 +1,6 @@
-# AWS-Prep
-AWS-Prep
-github history
+# Devops/Cloud-Prep Notes
+Linux/Linux
+AWS
+Github
+Docker
+Kubernetes
