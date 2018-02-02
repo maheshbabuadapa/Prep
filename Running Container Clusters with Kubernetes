@@ -80,6 +80,7 @@ match the label selectors indicated.
 By default, although a service is only exposed inside a cluster, it can also be exposed outside a cluster
 as needed.
 
+Install and Configure Master Controller
 Packages and Dependencies
 yum install -y ntp ( to perfect synchronize time all over the serves)
 systemctl enable ntpd && systemctl start ntpd && systemctl status ntpd
@@ -95,3 +96,31 @@ vi /etc/yum.repos.d/virt7-docker-common-release.repo
  gpgcheck=0
 yum update
 yum  install --enablerepo=virt7-docker-common-release etcd kubernetes docker
+
+configuration of kubernetes
+vi /etc/kubernetes/config  add below lines
+KUBE_MASTER="--master=http://IP ADDRESS OF MASTER:8080"
+KUBE_ETCD_SERVERS="--etcd-servers=http://IP ADDRESS OF MASTER:23719"
+
+configuration of ETCD server
+vi /etc/etcd/etcd.conf  add below lines
+#[Member]
+ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:2379"
+#[Clustering]
+ETCD_ADVERTISE_CLIENT_URLS="http://0.0.0.0:2379"
+
+configuration of API server
+vi /etc/kubernetes/apiserver
+KUBE_API_ADDRESS="--insecure-bind-address=127.0.0.1"
+change to
+KUBE_API_ADDRESS="--address=0.0.0.0"
+uncomment the KUBE_API_PORT="--port=8080"
+uncomment the KUBELET_PORT="--kubelet-port=10250"
+you can change KUBE_SERVICE_ADDRESSES if want to have different CIDR range
+comment the KUBE_ADMISSION_CONTROL
+
+Start Kubernetes
+systemctl enable etcd kube-apiserver kube-controller-manage kube-scheduler
+systemctl start etcd kube-apiserver kube-controller-manage kube-scheduler
+systemctl status etcd kube-apiserver kube-controller-manage kube-scheduler | grep
+"(running)" | wc -l
