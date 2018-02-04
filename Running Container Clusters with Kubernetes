@@ -156,4 +156,4 @@ comment KUBELET_POD_INFRA_CONTAINER
 
 systemctl enable kube-proxy kubelet docker
 systemctl start kubelet docker kube-proxy
-systemctl restart kubelet docker kube-proxy 
+systemctl restart kubelet docker kube-proxy
