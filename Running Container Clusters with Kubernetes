@@ -124,3 +124,36 @@ systemctl enable etcd kube-apiserver kube-controller-manage kube-scheduler
 systemctl start etcd kube-apiserver kube-controller-manage kube-scheduler
 systemctl status etcd kube-apiserver kube-controller-manage kube-scheduler | grep
 "(running)" | wc -l
+
+Install and Configure the Minions
+Packages and Dependencies
+yum install -y ntp ( to perfect synchronize time all over the serves)
+systemctl enable ntpd && systemctl start ntpd && systemctl status ntpd
+Add vi /etc/hosts
+ip address kubernetes:Master
+Ip address kubernetes:Nodes
+
+adding the repository
+vi /etc/yum.repos.d/virt7-docker-common-release.repo
+ [virt7-docker-common-release]
+ name=virt7-docker-common-release
+ baseurl=http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+ gpgcheck=0
+yum update
+yum  install --enablerepo=virt7-docker-common-release etcd kubernetes docker
+
+configuration of kubernetes nodes
+vi /etc/kubernetes/config  add below lines
+KUBE_MASTER="--master=http://IP ADDRESS OF MASTER:8080"
+KUBE_ETCD_SERVERS="--etcd-servers=http://IP ADDRESS OF MASTER:23719"
+
+vi /etc/kubernetes/kubelet
+KUBELET_ADDRESS="--address=0.0.0.0"
+KUBELET_HOSTNAME="--hostname-override=hostname"
+KUBELET_API_SERVER="--api-servers=http://IP ADDRESS OF MASTER:8080"
+uncomment KUBELET_PORT="--port=10250"
+comment KUBELET_POD_INFRA_CONTAINER
+
+systemctl enable kube-proxy kubelet docker
+systemctl start kubelet docker kube-proxy
+systemctl restart kubelet docker kube-proxy 
