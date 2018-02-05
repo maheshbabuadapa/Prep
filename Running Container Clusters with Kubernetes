@@ -120,9 +120,9 @@ you can change KUBE_SERVICE_ADDRESSES if want to have different CIDR range
 comment the KUBE_ADMISSION_CONTROL
 
 Start Kubernetes
-systemctl enable etcd kube-apiserver kube-controller-manage kube-scheduler
-systemctl start etcd kube-apiserver kube-controller-manage kube-scheduler
-systemctl status etcd kube-apiserver kube-controller-manage kube-scheduler | grep
+systemctl enable etcd kube-apiserver kube-controller-manager kube-scheduler
+systemctl start etcd kube-apiserver kube-controller-manager kube-scheduler
+systemctl status etcd kube-apiserver kube-controller-manager kube-scheduler | grep
 "(running)" | wc -l
 
 Install and Configure the Minions
