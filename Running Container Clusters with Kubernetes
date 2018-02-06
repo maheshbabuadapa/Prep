@@ -157,3 +157,63 @@ comment KUBELET_POD_INFRA_CONTAINER
 systemctl enable kube-proxy kubelet docker
 systemctl start kubelet docker kube-proxy
 systemctl restart kubelet docker kube-proxy
+
+Check the node are connected to master by command on master
+kubectl get nodes
+
+Create and Deploy Pod 
+
+Check before deploying any pods are present by
+kubctl get pods
+Create folder Builds
+cd Builds
+Creating pods 
+Now we are creating nginx.yml for deploying the pod
+For better writing ymal code use vim editor
+vim nginx.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx: 1.7.9
+    ports:
+    - containerPort: 80
+
+save and close the file
+
+To create a pod use the blow the command 
+kubectl create -f ./nginx.yml
+
+kubectl get pods (Now you can see nginx pod is running.)
+Try to login to node server check is docker continer is running 
+when you check the nodes you can 2 continer is running 
+1 is our nignx continer 
+2 is google pause continer
+
+If you want to describe the Pods use 
+kubectl describe pods (For all continers)
+kubectl describe pod nginx ( For spefic continers)
+By using this command it tell us many things such as 
+Container ID ,Image Name
+Port, node agssin to, IP addres etc...
+Your not able to ping the IP address of the pods externally 
+Unless you want see those continers we can deploy another continer in the same host system 
+kubectl run busybox --image=busybox --restart=Never --tty -i --generator=run-pod/v1
+
+Above command create a container called busybox and login to the command prompt
+Now your in the busybox container you use wget IP address of the nginx pod
+to check the pod is working or not (this busybox should create in the same node where nginx is also created)
+wget -q0- http://ipaddress
+we can have access to the continer inside pod internally
+After checking you can delete the continer by
+kubectl delete pod busybox
+There is an another way to acess the pod by using port forwarding 
+kubectl port-forward nginx :80 &
+In above command we are not specifying the port it just tell on which port 
+it is rerouted. ( For better understading  excute the above cammond and see)
+for example check above command
+wget -q0- http://localhost:34853(port automated generated)
+
