@@ -1,4 +1,5 @@
-Docker Architecture
+Docker Architecture:
+
     Docker is a client-server application where both the daemon and
     client can be run on the same system or you can connect a Docker
     client with a remote Docker daemon.
@@ -9,12 +10,13 @@ Docker Architecture
     that describes and includes the desired content).
 
     The main components of Docker are:
+    
        Daemon
        client
        Docker.io Registry
 
 
-Docker Installing
+Docker Installing:
 
 yum install -y yum-utils \
   device-mapper-persistent-data \
@@ -67,7 +69,8 @@ But if you want to have custom logs for single container run the below command
 docker container run -d --name Container Name --log-driver json-file Image name
 Example: docker container run -d --name testjson --log-driver json-file httpd
 
-Setting up Docker Swarm
+Setting up Docker Swarm:
+
 Creating docker manager
  docker swarm init --advertise-addr 172.28.128.3 ( Ip address of host system)
 To add new docker worker use below command
@@ -80,7 +83,8 @@ docker swarm join-token manager
 To add a manager to this swarm, run the following command:
 docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8dm3cj42mpygdz4a11p6k5yo9 172.28.128.3:2377
 
-Adding Node to Docker swarm
+Adding Node to Docker swarm:
+
 Take a new linux box and install docker on it
 collect worker  token from leader Docker instance and run in new linux box
 check nodes by using command docker node ls
@@ -89,7 +93,8 @@ ID                            HOSTNAME            STATUS              AVAILABILI
 n8685zrzad8g59k8by6hklz6u     jenkins             Ready               Active
 l7hduli1wetixu1s4mz1ozy7c *   kube                Ready               Active              Leader
 
- How to create Service in Docker swarm
+ How to create Service in Docker swarm:
+ 
  Every service is created from Docker Leader
  docker service create --name (name of service) --publish(port) 80:80 --replicas 2 images
  Example: docker service create --name bkupweb --publish 80:80 --replicas 2 httpd
@@ -106,7 +111,8 @@ pqhoe0i81vur        bkupweb.1           httpd:latest        kube                
 51ugw77b1nue        bkupweb.2           httpd:latest        node2               Running             Running less than a second ago
 Note: Check in other nodes by docker ps to confirm
 
-Create Docker  swarm backup and restore
+Create Docker  swarm backup and restore:
+
 Stop docker in manager (systemctl stop docker)
 Take copy of /var/lib/docker/swarm
 tar -zcvf swarm.tar.gz
@@ -183,7 +189,8 @@ docker container run --rm -it --name ucp -v /var/run/docker.sock:/var/run/docker
 
 
 
-Docker Image layers
+Docker Image layers:
+
 This video describes how docker image layer works
 Docker files determine number of intermediate layers or containers that are combined to form image.
 “docker images” shows only number of images present in the system
@@ -209,13 +216,15 @@ As soon as you imported to new image you will lost all your visibility of the la
 check using “ docker history imagename - - no - true”
 you can find only single layer and there is change in size. ( docker squash look for this tool)
 
-Docker storage drivers
+Docker storage drivers:
+
 Normally  docker volumes are used to write data to the containers.
 Container are abstract and portable if you start writing data to the container it is very difficult to portable even increases complexity.
 So Docker does pluggable architecture It supports  multiple storage drives and control images and containers stored on docker host.
  Write some notes on devicemapper storage driver
 
-Secure Docker registry
+Secure Docker registry:
+
 Docker registry nothing but a docker hub where you pull docker images securely
 Now we are creating docker registry in secure way which continues
 for this we need to generate  self signed certificates using openssl ( yum install openssl)
