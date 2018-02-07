@@ -217,3 +217,115 @@ it is rerouted. ( For better understading  excute the above cammond and see)
 for example check above command
 wget -q0- http://localhost:34853(port automated generated)
 
+Tags,Labels and Selectors
+Now we build the Pod definition let take look the way we can orginize the pods using Tags, Lables and Selectors
+Adding label to Pod
+vi nginx-pod-label.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx2
+  labels:
+    app: nginx2    ( For adding lables we need to add this section)
+spec:
+  containers:
+  -  name: nginx2
+     image: nginx:1.7.9
+     ports:
+       containerPort: 80
+
+Now create new pod
+kubectl create -f nginx-pod-label.yml
+To check the lables use 
+kubectl get pods -l app=nginx
+kubectl describe pods -l app=nginx
+
+Deployment State
+Deployment gives us more fexliblity then the pods 
+We are going to deploy Production nginx container and Development nginx container with the pod
+and we are going to update one pod but not other
+vi nginx-deployment-prod.yml
+
+apiVersion: extensions/v1betal  (Check in Kubernetes website for deployment version)
+kind: Deployment
+metadata:
+  name: nginx-deployment-prod
+spec:
+  replicas: 1   ( Deployments are often use deploy multiples pods at same time)
+   template: 
+     metadate:
+       labels:
+         app: nginx-deployment-prod
+      spec:
+        containers:
+	- name: nginx-deployment-prod
+	  image: nginx:1.7.9
+	  ports:
+	  - containerPort: 80
+
+Now Create Deployment Pod
+kubectl create -f nginx-deployment-prod.yml
+
+Kubectl get pods
+kubectl get deployments (to see deployment)
+
+Now copy nginx-deployment-prod.yml nginx-deployment-dev.yml
+
+vi nginx-deployment-dev.yml
+
+apiVesrion: extensions/v1betal
+kind: Deployment
+metadata:
+  name: nginx-deployment-dev
+spec:
+  repicas: 1
+  template: 
+    metadata:
+      labels:
+        app: nginx-deployment-dev
+     spec:
+       containers:
+       - name: nginx-deployment-dev
+         image: nginx:1.7.9
+	 ports:
+	 - containerPort: 80
+
+Here I'm showing deffrence between deployment vs regular Pod
+ployment
+Kubectl create -f nginx-deployment-dev.yml
+kubectl get deployments
+kubectl describe deployment -l app=nginx-deployment-dev.yml
+
+By using deployment type we can now update any pods using deployment update
+we are going to update nginx -dev 
+cp nginx-deployment-dev.yml nginx-deployment-dev-update.yml
+vi nginx-deployment-dev-update.yml
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-deployment-dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment-dev
+     spec:
+       containers:
+       - name: nginx-deployment-dev
+         image: nginx:1.8
+	 port:
+	   containerPort: 80
+ 
+kubectl apply -f nginx-deployment-dev-update.yml
+kubectl get pods
+kubectl describe deployment -l app=nginx-deployment-dev
+you can see Rolling update  by single command you can update your continer infrastrcture 
+
+
+
+
+
+   
+
