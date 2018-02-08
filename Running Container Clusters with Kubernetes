@@ -321,7 +321,117 @@ spec:
 kubectl apply -f nginx-deployment-dev-update.yml
 kubectl get pods
 kubectl describe deployment -l app=nginx-deployment-dev
-you can see Rolling update  by single command you can update your continer infrastrcture 
+you can see Rolling update  
+By single command you can update your container infrastrcture
+
+Mutli-Pod(Container) Replication controller
+    There are two ways to run Mutliple containers
+       1st way is multiple container doing diffrent things layered application 
+       runnning webserver and file server etc.. 
+       2nd multiple container in a pod the way we use is using replication controller
+       Replication controller is different kind of deployment used to deploy 1 to n Pods
+
+ Vi nginx-multi-label.yml
+
+ apiVersion: v1
+ kind: ReplicationController
+ metadata:
+   name: nginx-www
+ spec:
+   relicas: 3
+   selector:
+     app: nginx
+   template:
+     metadata:
+       name: nginx
+       labels:
+         app: nginx
+      spec:
+        containers:
+	- name: nginx
+	  image: nginx:1.7.9
+	  ports:
+	  - containerport: 80
+
+kubctl create -f nginx-multi-label.yml
+kubctl get pods you can see multiple replicas of the containers accorss the nodes
+you can check your replication controller by using command
+kubctl describe replicationcontroller
+kubectl describe pods (look the oupt in other nodes by docker ps  command)
+kubectl get services 
+At present you have only 1 service is running i.e kubernetes service
+you can see the cluster ip and port of the defult service
+
+Now you can test your replication controller by deleting one of the pods
+kubctl delete pods
+check even after delete of the one pod it is created again automatically
+kubectl get replicationcontrollers
+kubectl delete replicationcontrollers nginx-www
+Now it is deleted 
+
+Create and Deploy Service Definitions
+
+kubectl get replicationcontrollers
+kubectl get pods
+kubectl get nodes
+
+Service definitions starts to tie together 
+we got 3 pods across the 3 minions and there not exposed except to other pods depolyed in
+the same host however when we define a service we actually creating a cluster that refers to resources that exist on any of the nodes(minions)
+Kubernetes will assgin a single ip for all 3 pods so that we can connect to them do somethig 
+By using that cluster Ip address and port we can access the containers in the minions
+
+Building yml file for service Definition
+vi nginx-service.yml
+
+apiVesrion: v1
+kind : Service
+metadata:
+  name: nginx-service
+spec:
+  ports:
+  - port: 8000
+    targetPort: 80
+    protocol: TCP
+  selecor:
+    app: nginx
+    
+kubectl creat -f nginx-service.yml
+
+kubectl get services
+There you can find the Ip address of the service where you can acess the 3 continers 
+
+kubectl describe service nginx-service
+Here we are loadbalancing the the all containers
+
+to connect this service we need use busy box
+
+kubectl run busybox --generator=run-pod/v1 --image=busybox --restart=Nerver --tty -i
+wget -q0- http://service ip cluster:8000
+
+kubectl delete pod busybox
+kubectl delete service nginx-service
+but still even after delete of the service we can have the individual container running
+on nodes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
