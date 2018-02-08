@@ -149,7 +149,7 @@ KUBE_ETCD_SERVERS="--etcd-servers=http://IP ADDRESS OF MASTER:23719"
 
 vi /etc/kubernetes/kubelet
 KUBELET_ADDRESS="--address=0.0.0.0"
-KUBELET_HOSTNAME="--hostname-override=hostname"
+KUBELET_HOSTNAME="--hostname-override=hostname"                  #for mutliple host use $HOSTNAME --needs to be tested
 KUBELET_API_SERVER="--api-servers=http://IP ADDRESS OF MASTER:8080"
 uncomment KUBELET_PORT="--port=10250"
 comment KUBELET_POD_INFRA_CONTAINER
