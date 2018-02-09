@@ -194,7 +194,7 @@ Docker Image layers:
 This video describes how docker image layer works
 Docker files determine number of intermediate layers or containers that are combined to form image.
 “docker images” shows only number of images present in the system
-“docker image history image name”
+“docker history image name”
 above command show you each of the layer for that particular image
 look for the LABEl name you can find the base image of the image we built.
 Docker uses the Union file system
