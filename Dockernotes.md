@@ -1,0 +1,266 @@
+Docker Architecture:
+
+    Docker is a client-server application where both the daemon and
+    client can be run on the same system or you can connect a Docker
+    client with a remote Docker daemon.
+
+    Docker client and daemons communicate via sockets or through a
+    Restful API (Respersentational State Transfer -it is a
+    stateless Transfer over HTTP of a web page containing an XML files
+    that describes and includes the desired content).
+
+    The main components of Docker are:
+    
+       Daemon
+       client
+       Docker.io Registry
+
+
+Docker Installing:
+
+yum install -y yum-utils \
+  device-mapper-persistent-data \
+  lvm2
+
+  yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+    yum install docker-ce
+
+  systemctl start docker
+  systemctl  enable docker
+  View docker images (docker images)
+  Get docker images from docker hub ( docker pull image Name)
+  To run the docker container in background  docker run container -d --name container name  Image name
+  docker run -itd --name test1 httpd /bin/bash
+
+  Changing Docker Storage Driver to devicemapper
+  Check current Storage Driver by using command (docker info)
+  vi /etc/Docker/daemon.json
+  Add below
+  {
+"storage-driver": "devicemapper"
+}
+ Restart Docker (docker restart)
+ check docker info | grep storage Driver
+
+ Changing Docker logging Driver from json to local rsyslog
+ We can find the logs of container default by command docker logs and it is in Json format but we would like to send all these logs to host system logs
+ for that we need to activate rsyslog in host system
+ vi /etc/rsyslog.config
+ uncomment below lines in the configuration file
+ $ModLoad imudp
+ $UDPServerRun 514
+ Add below lines to vi /etc/Docker/daemon.json
+ {
+"storage-driver": "devicemapper",
+"log-driver": "syslog",
+"log-opts":{
+	"syslog-address": "udp://172.28.128.3:514"
+	}
+}
+Restart Docker (docker restart)
+docker info | grep Logging
+Logging Driver: syslog
+
+Now by default all docker logs will be viewed under /var/logs/messages
+But if you want to have custom logs for single container run the below command
+docker container run -d --name Container Name --log-driver json-file Image name
+Example: docker container run -d --name testjson --log-driver json-file httpd
+
+Setting up Docker Swarm:
+
+Creating docker manager
+ docker swarm init --advertise-addr 172.28.128.3 ( Ip address of host system)
+To add new docker worker use below command
+docker swarm join-token worker
+To add a manager to this swarm, run the following command:
+
+docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8dm3cj42mpygdz4a11p6k5yo9 172.28.128.3:2377
+if you want to create another manager
+docker swarm join-token manager
+To add a manager to this swarm, run the following command:
+docker swarm join --token SWMTKN-1-2kfy9x7fyegio78j0uxga4yukx1rcmdpuhip7jjp4tm3p7nlq1-8dm3cj42mpygdz4a11p6k5yo9 172.28.128.3:2377
+
+Adding Node to Docker swarm:
+
+Take a new linux box and install docker on it
+collect worker  token from leader Docker instance and run in new linux box
+check nodes by using command docker node ls
+example
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS
+n8685zrzad8g59k8by6hklz6u     jenkins             Ready               Active
+l7hduli1wetixu1s4mz1ozy7c *   kube                Ready               Active              Leader
+
+ How to create Service in Docker swarm:
+ 
+ Every service is created from Docker Leader
+ docker service create --name (name of service) --publish(port) 80:80 --replicas 2 images
+ Example: docker service create --name bkupweb --publish 80:80 --replicas 2 httpd
+Check you service  docker service ls
+Example
+[root@kube ~]# docker service ls
+ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
+12r8jg2xiypv        bkupweb             replicated          2/2                 httpd:latest        *:80->80/tcp
+Check you service on which node it is working
+Example
+docker service ps bkupweb
+ID                  NAME                IMAGE               NODE                DESIRED STATE       CURRENT STATE                    ERROR               PORTS
+pqhoe0i81vur        bkupweb.1           httpd:latest        kube                Running             Running 4 minutes ago
+51ugw77b1nue        bkupweb.2           httpd:latest        node2               Running             Running less than a second ago
+Note: Check in other nodes by docker ps to confirm
+
+Create Docker  swarm backup and restore:
+
+Stop docker in manager (systemctl stop docker)
+Take copy of /var/lib/docker/swarm
+tar -zcvf swarm.tar.gz
+Copy the swarm.tar.gz file to different Docker manager and un tar to location /var/lib/docker
+To re-initialize your backup use the below command
+docker swarm init --force-new-cluster
+Then you will get token
+check you docker cluster is working by (docker service ls)
+docker service ps
+The cool thing what about this is As long as a health cluster you take backup of swarm directory is fine to create whole cluster
+we don't even needed docker images also all we need swarm directory
+
+Outline the Sizing Requirements Prior to Installation
+Cluster Sizing Requirements
+It depends in general,Sizing your environment for a Docker Swarm cluster is going to
+be the same process that you would use for any application in your ecosystem.
+you would need to consider things like:
+1.CPU,Memory and Disk
+    Your containerized application will have the same Requirements that it would if Running
+    on other infrastructure (physical or virtual). Be sure your underlying hosts(s)
+    have the necessary horsepower.
+2.Concurrency
+   What are the load requirements of the application at peak and in total?
+  These will determine optimal placement and the amount of hardware resources(Constraints)
+  you need to allocate.
+
+  Universal Control Plane(UPC)
+  Docker Universal Control Plane (UCP) is the enterprise-grade cluster management solution from Docker.
+  You install it on-premises or in your virtual private cloud,
+  and it helps you manage your Docker swarm and applications through a single interface.
+  For Universal Control Plane(UPC) system requirements follow below link
+  https://docs.docker.com/datacenter/ucp/2.1/guides/admin/install/system-requirements/#network-requirements
+
+
+  Docker Trusted Registry (DTR)
+  Docker Trusted Registry (DTR) is the enterprise-grade image storage solution from Docker.
+  You install it behind your firewall so that you can securely store and manage the Docker images you use in your applications
+
+  Minimum Requirements
+  8gb RAM (MANAGER or DTR Nodes)
+   4gb RAM (Workers)
+   3gb Free Disk
+
+   Recommended Requirements
+   16gb RAM (MANAGER or DTR Nodes)
+   4vCPU (Workers or DTR Nodes)
+   25-100gb Disk Space
+
+   3. Performance Considerations (Timing)
+      We need take network Performance
+
+      Special Notes
+      Docker EE includes
+        . Docker Engine with Support
+        . Docker Trusted Registry
+        . Universal Control Plane
+      Compatibility
+         . Docker Engine 17.06+
+         . DTR 2.3+
+         . UCP 2.2+
+        Recommendations
+        . Plan for Load Balancing
+        . Use External Certificate Authority for Production
+
+Set Up and configuration Universal Control Plan(UCP) and Docker Trusted Repository(DTR) for Secure Cluster
+management
+
+Setting up Universal Control Plan(UCP)
+Make sure atlest 2 GB of ram befor running blow command to set up UCP
+docker container run --rm -it --name ucp -v /var/run/docker.sock:/var/run/docker.sock docker/ucp:2.2.4 install
+--host-address 172.28.128.3 --interactive
+
+
+
+
+
+Docker Image layers:
+
+This video describes how docker image layer works
+Docker files determine number of intermediate layers or containers that are combined to form image.
+“docker images” shows only number of images present in the system
+“docker history image name”
+above command show you each of the layer for that particular image
+look for the LABEl name you can find the base image of the image we built.
+Docker uses the Union file system
+Union file system basically always files and directories of separate file system over layed to form single file system.
+Too see complete structure of the layer use below command
+“docker history imagename:version - - no - true”
+when you try to add the size of  individual layer of the docker images is equivalent to complete docker image size.
+Modify image to single layer ( officially there is no way to flatten the image)
+when you type “docker history imagename:version “ you can see multiple layer present in the docker image and their details
+By consolidating the all layers to single layer you can gain space
+The way to do this we ne need to start container from the image we have “docker run imagename:version”
+“docker ps -a”
+We can export the container and import to image
+“docker export container:name > newimage.tar”
+complete container moved up to tar file this tar file can be moved different system if you want to.
+We can import above tar file by using
+“docker import newimage.tar newimagename:v1”
+As soon as you imported to new image you will lost all your visibility of the layer history and you can only single layer.
+check using “ docker history imagename - - no - true”
+you can find only single layer and there is change in size. ( docker squash look for this tool)
+
+Docker storage drivers:
+
+Normally  docker volumes are used to write data to the containers.
+Container are abstract and portable if you start writing data to the container it is very difficult to portable even increases complexity.
+So Docker does pluggable architecture It supports  multiple storage drives and control images and containers stored on docker host.
+ Write some notes on devicemapper storage driver
+
+Secure Docker registry:
+
+Docker registry nothing but a docker hub where you pull docker images securely
+Now we are creating docker registry in secure way which continues
+for this we need to generate  self signed certificates using openssl ( yum install openssl)
+mkdir certs
+mkdir auth
+Generating ssl certificate
+“openssl req  -newkey rsa:4096 -nodes -sha256 -keyout certs/dockerrepo.key -x509 -days 365 -out certs/dockerrepo.crt -subj CN=myregistrydomain.com”
+which creates 2 file dockerrepo.crt, dockerrepo.key
+
+Here we are creating docker registry under the domain name “myregistrydomain.com”
+add above domain name under vi /etc/hosts
+ipaddress myregistrydomain.com
+By default docker registry uses port 5000
+“mkdir -p /etc/docker/certs.d/myregistrydomain.com:5000”
+copy the dockerrepo.crt file to above created directory and rename to ca.crt
+then follow the below commands
+“docker pull registry:2”
+“docker run - - entrypoint htpasswd registry:2 -Bbn test password > auth/htpasswd”
+In above command we run the registry:2 and added test user and put password to it
+you can check their details in cat  /auth/htpasswd
+
+
+
+## Difference Between running a Container and Running a service
+###Container -docker run 
+*Encapsulate an application or function*
+*Run on a single host at a time*
+*Require manual steps to expose functionallity outside of the host system(ports
+,network and/or volumes)*
+*Require more complexx configuration to use multiple instances (proxies for example)*
+*Not highly avaliable*
+*Not easily scalable*
+###Service -docker serice
+*Encapsulate an application or function*
+*Can run on '1ton' nodes anytime*
+*Functionally is easily accessed using features like routing mesh outside the worker nodes.*
+*Multiple instances are set to lunch in a single command*
+*Highly available clusters are available*
+*Easily scalable up or down as needed* 
