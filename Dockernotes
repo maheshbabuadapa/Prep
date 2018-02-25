@@ -245,3 +245,22 @@ then follow the below commands
 “docker run - - entrypoint htpasswd registry:2 -Bbn test password > auth/htpasswd”
 In above command we run the registry:2 and added test user and put password to it
 you can check their details in cat  /auth/htpasswd
+
+
+
+## Difference Between running a Container and Running a service
+###Container -docker run 
+*Encapsulate an application or function*
+*Run on a single host at a time*
+*Require manual steps to expose functionallity outside of the host system(ports
+,network and/or volumes)*
+*Require more complexx configuration to use multiple instances (proxies for example)*
+*Not highly avaliable*
+*Not easily scalable*
+###Service -docker serice
+*Encapsulate an application or function*
+*Can run on '1ton' nodes anytime*
+*Functionally is easily accessed using features like routing mesh outside the worker nodes.*
+*Multiple instances are set to lunch in a single command*
+*Highly available clusters are available*
+*Easily scalable up or down as needed* 
