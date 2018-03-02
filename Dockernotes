@@ -93,6 +93,16 @@ ID                            HOSTNAME            STATUS              AVAILABILI
 n8685zrzad8g59k8by6hklz6u     jenkins             Ready               Active
 l7hduli1wetixu1s4mz1ozy7c *   kube                Ready               Active              Leader
 
+How to create image registry in docker swarm
+
+docker service create \
+  --name registry \
+  --mount type=bind,src=/elastic/registry-qa/,dst=/var/lib/registry \
+  --publish published=5000,target=5000 \
+  --replicas 1 \
+  registry:2
+
+
  How to create Service in Docker swarm:
  
  Every service is created from Docker Leader
