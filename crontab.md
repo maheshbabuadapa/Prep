@@ -31,8 +31,7 @@ Sun Mar 4 02:59:01 UTC 2018
 Sun Mar 4 03:00:01 UTC 2018
 
 
-### “Dont forget to change the permissions of the files 
-associated to that crontab”
+### “Dont forget to change the permissions of the files associated to that crontab”
 
 In this case 
 * `sudo chmod 777 test.sh`
@@ -52,7 +51,6 @@ In this case
 
 
 In the above example
-
 The cron job will run on zeroth minute of zeroth hour on every 1st and 15th day of every month of every day of the week
 
 
