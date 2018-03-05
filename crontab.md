@@ -2,22 +2,7 @@
 
 * Let’s say `* * * * * /home/vagrant/test.sh`
 
-* `cat test.sh`
-
-#!/bin/bash
-
-echo `date` >> /home/vagrant/version
-
-* `cat version`
-Sun Mar 4 02:53:01 UTC 2018
-Sun Mar 4 02:54:01 UTC 2018
-Sun Mar 4 02:55:01 UTC 2018
-Sun Mar 4 02:56:01 UTC 2018
-Sun Mar 4 02:57:01 UTC 2018
-Sun Mar 4 02:58:01 UTC 2018
-Sun Mar 4 02:59:01 UTC 2018
-Sun Mar 4 03:00:01 UTC 2018
-
+In the above crontab `test.sh` script will be executed for every minute, hour, day, month
 
 ### “Dont forget to change the permissions of the files associated to that crontab”
 
@@ -27,7 +12,7 @@ In this case
 * `sudo chmod 777 version`
 
 
-`crontab -l` to list the all configured jobs
+* `crontab -l` to list the all configured jobs
 
 
 
