@@ -26,7 +26,8 @@ So if we try to `cat` a file that doesn’t exist, like this:
 `cat: nop.txt: No such file or directory`
 
 
-> **Even if we redirect the stdout to a file, we still see the error output in the screen,**  because we are redirecting just the standard output, not the standard error.
+> **Even if we redirect the stdout to a file, we still see the error output in the screen,**<br />
+ because we are redirecting just the standard output, not the standard error.
 
 
 
@@ -85,9 +86,12 @@ This **"1"** is just the file descriptor for **stdout**.
  ### **`command > output` is just a shortcut for `command 1> output`**
 
 
- ### **`cat test.txt > output.txt` is just a shortcut for `cat test.txt 1> output.txt`**
+ ### **`cat test.txt > output.txt` is just a shortcut for `cat test.txt 1> output.txt`**  
 
+ We can use ``&[FILE_DESCRIPTOR]`` to refer a file descriptor value
 
+ # **using `2>&1` will redirect `stderr` to whatever value is set to `stdout`**
 
+ <br />
 
-We can use ``&[FILE_DESCRIPTOR]`` to refer a file descriptor value
+> ** (and `1>&2` will do the opposite) **
