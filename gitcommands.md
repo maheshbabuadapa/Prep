@@ -27,6 +27,9 @@
 
 *    `git commit -m "<comments for that commit>"`
 
+>     Her we will get a commit id
+
+
 #### To pull all the changes from remote repository to local:
 
 *    `git pull origin master`
