@@ -48,4 +48,6 @@ when we redirected the output of `cat test.txt` to `output.txt`, we could rewrit
 
 This **"1"** is just the file descriptor for **stdout**.
 
- The syntax for redirecting is [FILE_DESCRIPTOR]>, leaving the file descriptor out is just a shortcut to 1>.
+ The syntax for redirecting is
+
+  ``[FILE_DESCRIPTOR]>``, leaving the file descriptor out is just a shortcut to 1>
