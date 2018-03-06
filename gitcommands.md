@@ -1,4 +1,4 @@
-#### To configure your git account globally in that machine(in very directory): ####
+#### To configure your git account globally in that machine(in very directory):
 
 *    `git config --global user.email johndoe@example.com`
 
