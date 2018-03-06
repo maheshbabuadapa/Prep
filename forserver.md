@@ -24,6 +24,10 @@
 
 * `timedatectl set-timezone Asia/Kolkata`
 
+#### To set the timezone to **UTC**:
+
+* `timedatectl set-timezone UTC`
+
 
 
 
