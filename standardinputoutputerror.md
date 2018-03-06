@@ -35,7 +35,7 @@ So if we try to `cat` a file that doesn’t exist, like this:
 
 A file descriptor is nothing more that a positive integer that represents an open file. If you have 100 open files, you will have 100 file descriptors for them.
 
-**we just need to know that there are file descriptors for**     
+#### **we just need to know that there are file descriptors for**     
 
 # **Standard Output (stdout) = "1"**
 
@@ -95,3 +95,19 @@ This **"1"** is just the file descriptor for **stdout**.
  <br />
 
 > ** (and `1>&2` will do the opposite) **
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> For reference [brianstorti.com](https://www.brianstorti.com/understanding-shell-script-idiom-redirect/)
