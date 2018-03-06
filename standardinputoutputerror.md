@@ -12,4 +12,4 @@ But we can redirect this output to another place. Here, for example, we are redi
 
 We can print output.txt   `cat output.txt`  to get the contents of `test.txt`
 
-> here We changed the standard output (stdout) location to a file(output.txt), so it doesn’t use the screen anymore.
+> here we changed the standard output (stdout) location to a file(output.txt), so it doesn’t use the screen anymore.
