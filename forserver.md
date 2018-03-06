@@ -28,7 +28,7 @@
 
 * `timedatectl set-timezone UTC`
 
-> For reference: [github pages](https://www.cyberciti.biz/faq/centos-linux-6-7-changing-timezone-command-line/).
+> For reference: [cyberciti.biz](https://www.cyberciti.biz/faq/centos-linux-6-7-changing-timezone-command-line/).
 
 
 
