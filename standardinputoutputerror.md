@@ -50,4 +50,44 @@ This **"1"** is just the file descriptor for **stdout**.
 
  The syntax for redirecting is
 
-  ``[FILE_DESCRIPTOR]>``, leaving the file descriptor out is just a shortcut to 1>
+  ``[FILE_DESCRIPTOR]>``, leaving the file descriptor out is just a shortcut to **1>**
+
+
+  We can use **&1** to refer the value of the file descriptor **1 (stdout)**.
+
+  So when we use  
+
+  **2>&1**
+
+  we are basically saying
+
+   **“Redirect the `stderr` to the same place we are redirecting the `stdout`”**.
+
+
+  And that’s why we can do something like this to redirect both **stdout** and **stderr** to the same place:
+
+`cat test.txt > output.txt 2>&1`
+
+`cat output.txt`
+
+`cat nop.txt > output.txt 2>&1`
+
+`cat output.txt`
+
+
+`cat: nop.txt: No such file or directory`
+
+
+We can use **&1** to refer the value of the file descriptor **1 (stdout)**.  
+we can use **2>&1** and instruct the script that **stderr**(thrown errors/error output), also must be redirected to **stdout** (by specifying the **&1**)
+
+
+ # **`command > output` is just a shortcut for `command 1> output`**
+
+
+ # **`cat test.txt > output.txt` is just a shortcut for `cat test.txt 1> output.txt`**
+
+
+
+
+We can use ``&[FILE_DESCRIPTOR]`` to refer a file descriptor value
