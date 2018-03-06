@@ -6,7 +6,6 @@
 
 * `date -u`
 
-
 #### To know about your server's time zone:
 
 * `timedatectl status`
@@ -19,7 +18,6 @@
 
 * `timedatectl list-timezone | grep Asia/Kolkata`
 
-
 #### To set the desired time zone( we will set the indian time zone):
 
 * `timedatectl set-timezone Asia/Kolkata`
@@ -29,8 +27,3 @@
 * `timedatectl set-timezone UTC`
 
 > For reference: [cyberciti.biz](https://www.cyberciti.biz/faq/centos-linux-6-7-changing-timezone-command-line/).
-
-
-
-
-
