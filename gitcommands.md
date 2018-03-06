@@ -27,8 +27,7 @@
 
 *    `git commit -m "<comments for that commit>"`
 
->     Her we will get a commit id
-      which can be used to track the changes
+>     Her we will get a commit id (which can be used to track the changes and review the commit history)
 
 
 #### To pull all the changes from remote repository to local:
