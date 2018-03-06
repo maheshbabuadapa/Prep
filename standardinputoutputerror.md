@@ -37,9 +37,9 @@ A file descriptor is nothing more that a positive integer that represents an ope
 
 **we just need to know that there are file descriptors for**     
 
-**Standard Output (stdout) = "1"**
+# **Standard Output (stdout) = "1"**
 
-**Standard Error (stderr) = "2"**
+# **Standard Error (stderr) = "2"**
 
 when we redirected the output of `cat test.txt` to `output.txt`, we could rewrite the command like this:
 
