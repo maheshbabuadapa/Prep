@@ -74,8 +74,7 @@ This **"1"** is just the file descriptor for **stdout**.
 `cat nop.txt > output.txt 2>&1`
 
 `cat output.txt`
-
-
+<br />
 `cat: nop.txt: No such file or directory`
 
 
