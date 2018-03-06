@@ -94,19 +94,9 @@ This **"1"** is just the file descriptor for **stdout**.
 
  <br />
 
-> ** (and `1>&2` will do the opposite) **
+> **(and `1>&2` will do the opposite) **
 
-
-
-
-
-
-
-
-
-
-
-
+<br />
 
 
 
