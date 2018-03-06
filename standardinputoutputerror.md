@@ -82,10 +82,10 @@ We can use **&1** to refer the value of the file descriptor **1 (stdout)**.
 we can use **2>&1** and instruct the script that **stderr**(thrown errors/error output), also must be redirected to **stdout** (by specifying the **&1**)
 
 
- # **`command > output` is just a shortcut for `command 1> output`**
+ ### **`command > output` is just a shortcut for `command 1> output`**
 
 
- # **`cat test.txt > output.txt` is just a shortcut for `cat test.txt 1> output.txt`**
+ ### **`cat test.txt > output.txt` is just a shortcut for `cat test.txt 1> output.txt`**
 
 
 
