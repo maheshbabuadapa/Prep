@@ -45,7 +45,7 @@ We select the default value for the Realm (ManagementRealm), by hitting enter, a
 
 Type the following in your browser window
 
-http://yourip::9990/
+http://yourip:9990/
 
 _It will ask for the credentials, enter the user name and password created previously at `ManagementRealm`_
 
