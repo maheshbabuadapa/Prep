@@ -43,8 +43,11 @@ We select the default value for the Realm (ManagementRealm), by hitting enter, a
 
 * `./standalone.sh -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0&`
 
-> Type in the following in your browser window
+Type the following in your browser window
 
 http://yourip::9990/
 
 _It will ask for the credentials, enter the user name and password created previously at `ManagementRealm`_
+
+
+**_For reference: [opensource.io](https://opensource.io/2012/04/30/installing-jboss-7-1-1-final-on-centos-6-x/)_**
