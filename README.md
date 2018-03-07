@@ -3,11 +3,5 @@ Linux/Linux
 AWS
 Github
 Docker
-Kubernetes
-
-
-
-
-
-
+Kubernetes <br />
 and a little bit of Jenkins :-p
