@@ -37,7 +37,8 @@ Realm (ManagementRealm) :<br />
 Username : jboss<br />
 Password :<br />
 Re-enter Password :
-* hit enter for Realm to use default, then provide a username and password
+
+ hit enter for Realm to use default, then provide a username and password
 We select the default value for the Realm (ManagementRealm), by hitting enter, and select **“jboss” as our username. By default, we supply “jb0ss” as our password**, of course, you can provide any password you prefer here.
 
 * `./standalone.sh -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0&`
