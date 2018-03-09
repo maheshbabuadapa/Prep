@@ -26,5 +26,8 @@
 `touch ~/.ssh/authorized_keys`
 `chmod 600 ~/.ssh/authorized_keys`
 
-* paste the public key copied from the dafault user's home directory : `~/.ssh/authorized_keys` to the new user's authorized_keys file
+* paste the public key copied from the dafault user's home directory : `~/.ssh/authorized_keys` to the new user's authorized_keys file:
 `vi ~/.ssh/authorized_keys`
+
+
+* ssh into the instance with th new newusername by using the previous .pem file:
