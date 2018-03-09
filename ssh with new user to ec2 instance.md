@@ -10,8 +10,8 @@
 
 
 
-* copy the public key of the default user present in : ` ~/.ssh/authorized_keys `   <br />  <br />
-` cat ~/.ssh/authorized_keys `
+* copy the public key of the default user present in : ` ~/.ssh/authorized_keys `
+*  ` cat ~/.ssh/authorized_keys `
 
 
 
@@ -20,14 +20,20 @@
 
 
 
-* Create the SSH directory and authorized users file, with the correct permissions:
-` mkdir ~/.ssh`
-`chmod 700 ~/.ssh`
-`touch ~/.ssh/authorized_keys`
+* Create the SSH directory and authorized users file, with the correct permissions: <br />
+` mkdir ~/.ssh` <br />
+`chmod 700 ~/.ssh` <br />
+`touch ~/.ssh/authorized_keys` <br />
 `chmod 600 ~/.ssh/authorized_keys`
 
-* paste the public key copied from the dafault user's home directory : `~/.ssh/authorized_keys` to the new user's authorized_keys file:
-`vi ~/.ssh/authorized_keys`
+* paste the public key copied from the dafault user's home directory : `~/.ssh/authorized_keys` to the new user's authorized_keys file: <br />
+` vi ~/.ssh/authorized_keys `
 
 
-* ssh into the instance with th new newusername by using the previous .pem file:
+* ssh into the instance with th new newusername by using the previous .pem file: <br />
+` ssh -i <path to the .pem key file> <newusername>@<Public DNS of ec2 instance> `
+
+
+
+
+> [brianlinkletter.com](http://www.brianlinkletter.com/how-to-set-up-a-new-userid-on-your-amazon-aws-server-instance/)
