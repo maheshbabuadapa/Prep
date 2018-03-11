@@ -10,7 +10,7 @@ Docker Architecture:
     that describes and includes the desired content).
 
     The main components of Docker are:
-    
+
        Daemon
        client
        Docker.io Registry
@@ -104,7 +104,7 @@ docker service create \
 
 
  How to create Service in Docker swarm:
- 
+
  Every service is created from Docker Leader
  docker service create --name (name of service) --publish(port) 80:80 --replicas 2 images
  Example: docker service create --name bkupweb --publish 80:80 --replicas 2 httpd
@@ -258,7 +258,7 @@ you can check their details in cat  /auth/htpasswd
 
 
 Difference Between running a Container and Running a service
-Container -docker run 
+Container -docker run
 Encapsulate an application or function*
 Run on a single host at a time*
 Require manual steps to expose functionallity outside of the host system(ports network and/or volumes)
