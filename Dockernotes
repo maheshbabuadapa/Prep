@@ -265,6 +265,7 @@ Require manual steps to expose functionallity outside of the host system(ports n
 Require more complexx configuration to use multiple instances (proxies for example)
 Not highly avaliable
 Not easily scalable
+
 Service -docker serice
 Encapsulate an application or function
 Can run on '1ton' nodes anytime
