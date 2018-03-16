@@ -37,5 +37,3 @@
 
 
 > [brianlinkletter.com](http://www.brianlinkletter.com/how-to-set-up-a-new-userid-on-your-amazon-aws-server-instance/)
-
-dont forget to try
