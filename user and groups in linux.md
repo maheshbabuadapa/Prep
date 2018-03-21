@@ -1,6 +1,6 @@
 
 
-Syntax for the each record (every system user account has a record) in the ` /etc/passwd ` file:                                                                                     <br />
+Syntax for the each record (every system user account has a record) in the ` /etc/passwd ` file:                                                                                                                <br />
 ` [username]:[x]:[UID]:[GID]:[Comment]:[Home directory]:[Default shell] `
 
     * Fields [username] and [Comment] are self explanatory.
@@ -11,5 +11,5 @@ Syntax for the each record (every system user account has a record) in the ` /et
 
 
 > lets say :
-[root@ip-172-31-45-230 ~]# cat /etc/passwd
+[root@ip-172-31-45-230 ~]# cat /etc/passwd                                                                                                                                                                      <br />
 root:x:0:0:root:/root:/bin/bash
