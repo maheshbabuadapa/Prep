@@ -22,8 +22,8 @@
 
     * [Group name] is the name of group.
     * An x in [Group password] indicates group passwords are not being used.
-    * [GID]: same as in /etc/passwd.
-    * [Group members]: a comma separated list of users who are members of [Group name].
+    * [GID]:  same as in /etc/passwd.
+    * [Group members]:  a comma separated list of users who are members of [Group name].
 
 
 > lets say :                                                                                                                                                                                                                          <br />
