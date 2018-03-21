@@ -1,6 +1,6 @@
 
 
-Syntax for the each record (every system user account has a record) in the ` /etc/passwd ` file:                                                                                                                <br />
+### Syntax for the each record (every system user account has a record) in the ` /etc/passwd ` file file:                                                                                                                            <br />
 ` [username]:[x]:[UID]:[GID]:[Comment]:[Home directory]:[Default shell] `
 
     * Fields [username] and [Comment] are self explanatory.
@@ -10,13 +10,13 @@ Syntax for the each record (every system user account has a record) in the ` /et
     * The [Default shell] is the shell that will be made available to this user when he or she logins the system.
 
 
-> lets say :
-[root@ip-172-31-45-230 ~]# cat /etc/passwd                                                                                                                                                                      <br />
+> lets say :                                                                                                                                                                                                                          <br />
+[root@ip-172-31-45-230 ~]# cat /etc/passwd                                                                                                                                                                                                                           <br />
 **root: x:0:0:root:/root:/bin/bash**
 
 
 
-Syntax for the each record in ` /etc/group ` file:
+### Syntax for the each record in ` /etc/group ` file:
 ` [Group name]:[Group password]:[GID]:[Group members] `
 
 
@@ -26,6 +26,6 @@ Syntax for the each record in ` /etc/group ` file:
     * [Group members]: a comma separated list of users who are members of [Group name].
 
 
-> lets say :
- [root@ip-172-31-45-230 ~]# cat /etc/group
- **wheel:x:10:centos**
+> lets say :                                                                                                                                                                                                                          <br />
+ [root@ip-172-31-45-230 ~]# cat /etc/group                                                                                                                                                                                                                           <br />
+ **wheel: x:10:centos**
