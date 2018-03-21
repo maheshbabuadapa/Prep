@@ -1,6 +1,6 @@
 
 
-Syntax for the each record (every system user account has a record) in the ` /etc/passwd ` file:                                                                                          <br />
+Syntax for the each record (every system user account has a record) in the ` /etc/passwd ` file:                                                                                     <br />
 ` [username]:[x]:[UID]:[GID]:[Comment]:[Home directory]:[Default shell] `
 
     * Fields [username] and [Comment] are self explanatory.
