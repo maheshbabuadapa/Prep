@@ -12,4 +12,15 @@ Syntax for the each record (every system user account has a record) in the ` /et
 
 > lets say :
 [root@ip-172-31-45-230 ~]# cat /etc/passwd                                                                                                                                                                      <br />
-root:x:0:0:root:/root:/bin/bash
+**root: x:0:0:root:/root:/bin/bash**
+
+
+
+Syntax for the each record in ` /etc/group ` file:
+` [Group name]:[Group password]:[GID]:[Group members] `
+
+
+    * [Group name] is the name of group.
+    * An x in [Group password] indicates group passwords are not being used.
+    * [GID]: same as in /etc/passwd.
+    * [Group members]: a comma separated list of users who are members of [Group name].
