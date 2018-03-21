@@ -24,3 +24,8 @@ Syntax for the each record in ` /etc/group ` file:
     * An x in [Group password] indicates group passwords are not being used.
     * [GID]: same as in /etc/passwd.
     * [Group members]: a comma separated list of users who are members of [Group name].
+
+
+> lets say :
+ [root@ip-172-31-45-230 ~]# cat /etc/group
+ **wheel:x:10:centos**
