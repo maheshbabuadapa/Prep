@@ -86,7 +86,7 @@
 
 ![](assets/IMG_27032018_155410_0.png)
 
-*Print columns with sed:*
+*Print columns with awk:*
 
 
 
