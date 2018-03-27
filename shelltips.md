@@ -1,11 +1,23 @@
 # **Shell Tips**
 
-### command to check whether a file exists:  <br />  <br />
+## ** Exit status codes:   <br />   **
 
-* `test -f FILENAME/pathofthefile` (or)  `[ -f FILENAME/pathofthefile ]`
+**"Each Linux command returns a status when it terminates normally or abnormally"** which are called  **"exit status codes"**
 
-example:                 <br />
- * `test -f /etc/passwd ; echo $?`   (or) `[ -f /etc/passwd ] ; echo $?`    <br />
+
+
+
+
+
+
+<br />
+<br />
+<br />
+## ** Command to check whether a __*file*__ exists:  <br />  <br />**
+
+* `test -f FILENAME/pathofthefile` (or)  `[ -f FILENAME/pathofthefile ]`   <br /> <br />
+**example:                 <br />   <br />**
+* `test -f /etc/passwd ; echo $?`   (or) `[ -f /etc/passwd ] ; echo $?`   <br />
 >if the output is **0** then file exists in the path(true) <br />
 >if the output is **1** then file exists in the path(true)
 
@@ -31,12 +43,12 @@ example:                 <br />
 
 
 
-### command to check whether a directory exists:  <br />  <br />
+#### command to check whether a __*directory*__ exists:  <br />  <br />
 
   * `test -d /etc ; echo $?` (or) `[ -d /etc ] ; echo $?`
 
 
-### print using **awk** and **sed**:   <br />
+## ** Print using awk and sed:   <br /> **
 
 
 
