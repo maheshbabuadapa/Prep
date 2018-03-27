@@ -13,7 +13,7 @@
 <br />
 <br />
 <br />
-## **Command to check whether a file exists:  <br />  <br />**
+## **Command to check whether a file exists:**  <br />  <br />
 
 * `test -f FILENAME/pathofthefile` (or)  `[ -f FILENAME/pathofthefile ]`   <br /> <br />
 **example:                 <br />   <br />**
