@@ -1,6 +1,6 @@
 # **Shell Tips**
 
-## ** Exit status codes:   <br />   **
+## **Exit status codes:   <br />**
 
 **"Each Linux command returns a status when it terminates normally or abnormally"** which are called  **"exit status codes"**
 
