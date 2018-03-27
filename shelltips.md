@@ -6,15 +6,25 @@
 
 
 
+' `echo $?` is used to see the exit status codes '
 
+
+
+* `grep -q [PATTERN] [FILE] && echo $?`
+        - The exit status is **0 (true)** if the pattern was found
+        - The exit status is **1 (false)** if the pattern was not found
+
+**example:**
+
+* `grep -q 'SOME_PATTERN' 'SOME_FILE' && echo $?`
 
 
 
 <br />
 <br />
 <br />
-## **Command to check whether a file exists:**  <br />  <br />
-
+## **Command to check whether a file exists:**
+<br />
 * `test -f FILENAME/pathofthefile` (or)  `[ -f FILENAME/pathofthefile ]`   <br /> <br />
 **example:                 <br />   <br />**
 * `test -f /etc/passwd ; echo $?`   (or) `[ -f /etc/passwd ] ; echo $?`   <br />
