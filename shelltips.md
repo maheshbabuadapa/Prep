@@ -1,7 +1,6 @@
 # **Shell Tips**
 
-## **Exit status codes:   <br />**
-
+## **Exit status codes:**   <br />
 **"Each Linux command returns a status when it terminates normally or abnormally"** which are called  **"exit status codes"**
 
 
@@ -13,7 +12,7 @@
 <br />
 <br />
 <br />
-## **Command to check whether a __*file*__ exists:  <br />  <br />**
+## **Command to check whether a file exists:  <br />  <br />**
 
 * `test -f FILENAME/pathofthefile` (or)  `[ -f FILENAME/pathofthefile ]`   <br /> <br />
 **example:                 <br />   <br />**
