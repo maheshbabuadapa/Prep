@@ -86,6 +86,15 @@
 
 ![](assets/IMG_27032018_155410_0.png)
 
+*Print columns with sed:*
+
+
+
+* `cat netflix.txt | awk '{print $3}'`
+
+
+![](assets/IMG_27032018_193540_0.png)
+
 
 
 
