@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-# **Shell Tips**   <br />
-## **Exit status codes:**   <br />
-=======
 # **Shell Tips**
 
-## ** Exit status codes:   <br />   **
+## **Exit status codes:**
 
->>>>>>> parent of 5023f42... changed font size
 **"Each Linux command returns a status when it terminates normally or abnormally"** which are called  **"exit status codes"**
 
 
