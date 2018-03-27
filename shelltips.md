@@ -45,7 +45,8 @@
 
 
 
-* ` [ -f "/etc/bebebe" ] && echo "The file exists" || echo "The file does not exist" ` <br />
+* ` [ -f "/etc/bebebe" ] && echo "The file exists" || echo "The file does not exist" ` 
+
   *output:*  The file exists
 
 
