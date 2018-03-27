@@ -36,6 +36,38 @@ example:                 <br />
   * `test -d /etc ; echo $?` (or) `[ -d /etc ] ; echo $?`
 
 
+### print using **awk** and **sed**:   <br />
+
+
+
+*Print Lines Between Two Patterns with sed:*
+
+* `sed -n '/StartPattern/,/EndPattern/p' FileName/pathofthefile`
+
+
+
+*Print Lines Between Two Patterns with awk:*
+
+* `awk '/StartPattern/,/EndPattern/' FileName/pathofthefile`
+
+
+
+
+
+
+
+
+
+
+
+
+
+![](assets/IMG_27032018_155410_0.png)
+
+
+
+
+
 
 
 
