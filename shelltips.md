@@ -18,6 +18,8 @@
 
 * `grep -q 'SOME_PATTERN' 'SOME_FILE' && echo $?`
 
+* `grep -q 'root' '/etc/passwd' && echo $?`
+
 
 
 ## **Command to check whether a file exists:**
