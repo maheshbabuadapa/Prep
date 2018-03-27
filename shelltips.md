@@ -13,7 +13,7 @@
 <br />
 <br />
 <br />
-## ** Command to check whether a __*file*__ exists:  <br />  <br />**
+## **Command to check whether a __*file*__ exists:  <br />  <br />**
 
 * `test -f FILENAME/pathofthefile` (or)  `[ -f FILENAME/pathofthefile ]`   <br /> <br />
 **example:                 <br />   <br />**
@@ -48,7 +48,7 @@
   * `test -d /etc ; echo $?` (or) `[ -d /etc ] ; echo $?`
 
 
-## ** Print using awk and sed:   <br /> **
+## **Print using awk and sed:   <br />**
 
 
 
