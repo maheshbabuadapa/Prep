@@ -16,9 +16,9 @@
 
 **example:**
 
-* `grep -q 'SOME_PATTERN' 'SOME_FILE' && echo $?`
+* `grep -q 'SOME_PATTERN' 'SOME_FILE' && echo $?`  (or) `grep -q 'SOME_PATTERN' 'SOME_FILE' ; echo $?`
 
-* `grep -q 'root' '/etc/passwd' && echo $?`
+* `grep -q 'root' '/etc/passwd' && echo $?`   (or) `grep -q 'user' '/etc/passwd' ; echo $?`
 
 
 
