@@ -50,7 +50,7 @@
 
 
 
-#### command to check whether a __*directory*__ exists:  <br />
+#### Command to check whether a __*directory*__ exists:  <br />
 
   * `test -d /etc ; echo $?` (or) `[ -d /etc ] ; echo $?`
 
