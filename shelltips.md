@@ -11,8 +11,9 @@
 
 
 * `grep -q [PATTERN] [FILE] && echo $?`
-        - The exit status is **0 (true)** if the pattern was found
-        - The exit status is **1 (false)** if the pattern was not found
+
+  - The exit status is **0 (true)** if the pattern was found
+  - The exit status is **1 (false)** if the pattern was not found
 
 **example:**
 
