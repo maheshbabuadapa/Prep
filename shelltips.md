@@ -20,11 +20,8 @@
 
 
 
-<br />
-<br />
-<br />
 ## **Command to check whether a file exists:**
-<br />
+
 * `test -f FILENAME/pathofthefile` (or)  `[ -f FILENAME/pathofthefile ]`   <br /> <br />
 **example:                 <br />   <br />**
 * `test -f /etc/passwd ; echo $?`   (or) `[ -f /etc/passwd ] ; echo $?`   <br />
