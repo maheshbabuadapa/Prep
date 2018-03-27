@@ -6,7 +6,7 @@
 
 
 
- #### `echo $?` is used to see the exit status codes
+**`echo $?` is used to see the exit status codes**
 
 
 
