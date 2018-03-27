@@ -6,7 +6,7 @@
 
 
 
-**`echo $?` is used to see the exit status codes**
+* **`echo $?` is used to see the exit status codes**
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-* ` [ -f "/etc/bebebe" ] && echo "The file exists" || echo "The file does not exist" ` 
+* ` [ -f "/etc/bebebe" ] && echo "The file exists" || echo "The file does not exist" `
 
   *output:*  The file exists
 
