@@ -37,10 +37,20 @@
 
 
 #### To sync contents of local directory to desired bucket in S3  :   <br />   <br />
-* `aws s3 sync . s3://okoye3`
+* `aws s3 sync s3://okoye3 .`
+
+
+
+
+![](assets/IMG_28032018_183413_0.png)
 
 
 
 
 #### To sync contents of local directory to desired bucket in S3  :   <br />   <br />
-* `aws s3 sync s3://okoye3 .`
+* `aws s3 sync . s3://okoye3`
+
+
+
+
+![](assets/IMG_28032018_182530_0.png)
