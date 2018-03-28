@@ -54,3 +54,16 @@
 
 
 ![](assets/IMG_28032018_182530_0.png)
+
+
+
+
+
+
+#### To delete the bucket:
+if bucket is empty : `aws s3 rb s3://name of the bucket`
+
+if bucket has contents : `aws s3 rb s3://name of the bucket --force`
+
+
+![](assets/IMG_28032018_204105_0.png)
