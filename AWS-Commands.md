@@ -1,4 +1,4 @@
-### To view User-Data & Instance Meta-Data
+#### To view User-Data & Instance Meta-Data:   <br />
 
 `curl http://169.254.169.254/latest/user-data/`
 <br />
@@ -6,7 +6,7 @@
 `curl http://169.254.169.254/latest/meta-data/`
 
 
-### To see the instance region:
+#### To see the instance region:
 
 * ` curl http://169.254.169.254/latest/dynamic/instance-identity/document|grep region|awk -F\" '{print $4}' `                     <br /> (or) <br />
 * `curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | python -c "import json,sys; print json.loads(sys.stdin.read())['region']"`  <br /> (or) <br />
@@ -18,3 +18,29 @@
 
 
 > _All the above commands must be executed on the shell of the target instance_
+
+
+#### To view ec2 instances in the desired region:   <br />   <br />
+
+* `aws ec2 describe-instances --region us-east-1`
+
+
+
+#### To view S3 buckets :   <br />   <br />
+* `aws s3 ls`
+
+
+
+#### To view contents of desired bucket in S3  :   <br />   <br />
+* `aws s3 ls s3://okoye3`
+
+
+
+#### To sync contents of local directory to desired bucket in S3  :   <br />   <br />
+* `aws s3 sync . s3://okoye3`
+
+
+
+
+#### To sync contents of local directory to desired bucket in S3  :   <br />   <br />
+* `aws s3 sync s3://okoye3 .`
