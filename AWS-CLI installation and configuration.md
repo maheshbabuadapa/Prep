@@ -1,8 +1,7 @@
 ### Installation of AWS CLI in linux:
 
 check for version of python installed
-* ` python --version ` ( if necessary: `sudo yum install python` ,
-* [docs.aws.amazon.com](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html) )
+* ` python --version ` ( if necessary: `sudo yum install python` , [docs.aws.amazon.com](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html) )
 
 
 
