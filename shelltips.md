@@ -100,8 +100,17 @@
 
 
 
+## **List the files :**
+
+* `ls -ltr [range of ]`
 
 
+
+
+
+
+
+![](assets/IMG_28032018_134512_0.png)
 
 
 
