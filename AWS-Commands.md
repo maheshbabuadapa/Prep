@@ -67,3 +67,7 @@ if bucket has contents : `aws s3 rb s3://name of the bucket --force`
 
 
 ![](assets/IMG_28032018_204105_0.png)
+
+
+
+>For reference: [docs.aws.amazon.com](https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html)
