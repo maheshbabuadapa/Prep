@@ -31,6 +31,8 @@
 
 
 
+![](assets/IMG_29032018_154237_0.png)
+
 #### To view contents of desired bucket in S3  :   <br />   <br />
 * `aws s3 ls s3://okoye3`
 
