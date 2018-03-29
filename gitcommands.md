@@ -60,7 +60,6 @@
 
 *    `git tag <tagid> <commitid>`
 
-
 #### To push the local tags to remote repository:
 
 *    `git push --tags origin`
