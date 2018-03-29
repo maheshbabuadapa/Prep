@@ -64,3 +64,10 @@
 #### To push the local tags to remote repository:
 
 *    `git push --tags origin`
+
+
+
+
+
+
+> many of the commands had to be added
