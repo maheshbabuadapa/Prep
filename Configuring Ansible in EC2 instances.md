@@ -38,3 +38,17 @@
 
 
 ![](assets/markdown-img-paste-20180404100145995.png)
+
+
+
+
+
+
+
+
+ #### Running ansible playbook from Master(EC2 instance):   <br />   <br />
+* `ansible-playbook -v createafile.yml`
+
+
+![](assets/markdown-img-paste-2018040410201787.png)
+![](assets/markdown-img-paste-20180404101726814.png)
