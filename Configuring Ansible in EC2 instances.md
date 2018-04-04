@@ -17,6 +17,10 @@
 
 
 
+![](assets/markdown-img-paste-20180404103515846.png)
+
+
+
 > After completing the above process we can directly ssh to the **node**(EC2 instance) <br />
 
 ![](assets/IMG_04042018_070805_0.png)
@@ -38,6 +42,7 @@
 
 
 ![](assets/markdown-img-paste-20180404100145995.png)
+![](assets/markdown-img-paste-20180404104634890.png)
 
 
 
