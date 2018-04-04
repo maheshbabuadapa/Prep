@@ -36,7 +36,10 @@
 
 ![](assets/IMG_02042018_024809_0.png)
 
+#### To start an ec2 instances with instance id:   <br />   <br />
+* `aws ec2 terminate-instances --instance-ids i-04b97d9163360d14f`
 
+![](assets/IMG_04042018_023935_0.png)
 
 
 #### To view S3 buckets :   <br />   <br />
@@ -88,6 +91,3 @@ if bucket has contents : `aws s3 rb s3://name of the bucket --force`
 ![](assets/IMG_29032018_161541_0.png)
 
 >For reference: [docs.aws.amazon.com](https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html)
-
-
-![](IMG_02042018_144206_0.png)
