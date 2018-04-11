@@ -99,6 +99,23 @@ test123
 
 
 
+
+## **"find" and "grep":**
+* `find / -name  "love"`
+* `find <pathforsearch> <typeofsearch> "<searchsring>"`
+
+
+
+* `grep -r "love" /`
+* `grep <flag> "<searchstring>" <pathforsearch>`
+
+
+![](assets/IMG_03042018_02480913_0.png)
+
+
+
+
+
 ## **List the files :**
 
 * `ls -ltr [range of ]`
