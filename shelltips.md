@@ -76,9 +76,6 @@
 
 
 
-
-
-
 test123
 
 
@@ -113,6 +110,14 @@ test123
 ![](assets/IMG_03042018_02480913_0.png)
 
 
+## **Command to replace a string in a file with new string :**
+
+* ` sed -i -e 's/oldstring/newstring/g' /pathofthefile
+
+Example: 
+* `sed -i -e 's/chicorita/meganium/g' /home/ec2-user/pokemon
+
+![](assets/Capture03.png)
 
 
 
