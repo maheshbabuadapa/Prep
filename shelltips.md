@@ -114,7 +114,7 @@ test123
 
 * ` sed -i -e 's/oldstring/newstring/g' /pathofthefile
 
-Example: 
+**example:**
 * `sed -i -e 's/chicorita/meganium/g' /home/ec2-user/pokemon
 
 ![](assets/Capture03.png)
