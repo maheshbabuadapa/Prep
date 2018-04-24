@@ -112,10 +112,10 @@ test123
 
 ## **Command to replace a string in a file with new string :**
 
-* ` sed -i -e 's/oldstring/newstring/g' /pathofthefile
+* ` sed -i -e 's/oldstring/newstring/g' /pathofthefile `
 
 **example:**
-* `sed -i -e 's/chicorita/meganium/g' /home/ec2-user/pokemon
+* ` sed -i -e 's/chicorita/meganium/g' /home/ec2-user/pokemon `
 
 ![](assets/Capture03.png)
 
