@@ -42,4 +42,9 @@ First install pip:
 
 Using pip install boto:
 * `pip install -u boto`
+
+
+
+
+
 ![](assets/IMG_03042018_0248091333_0.png)
