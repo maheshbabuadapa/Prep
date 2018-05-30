@@ -33,3 +33,13 @@ Default output format [None]: json   <br />
 >if there is an error saying: " Could not connect to the endpoint URL "
 then you need to change the region in ` ~/.aws/config ` <br />
 check for any alphabets at the end of the availability zone(region=us-east-1a) and remove them(region=us-east-1)
+
+
+
+#### Installation of boto in linux:
+First install pip:
+* `sudo yum install python-pip`
+
+Using pip install boto:
+* `pip install -u boto`
+![](assets/IMG_03042018_0248091333_0.png)
