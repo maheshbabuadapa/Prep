@@ -63,3 +63,13 @@
 #### To push the local tags to remote repository:
 
 *    `git push --tags origin`
+
+
+
+
+
+
+
+#### To print file in the  repository:
+
+*   Replace `github.com` with `gitprint.com` in the **URL**  
